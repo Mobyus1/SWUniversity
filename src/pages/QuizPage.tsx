@@ -90,7 +90,7 @@
                   }
                   </form>
                   {
-                    quizResult && <p className={`mt-10 font-bold text-xl ${quizResult === "correct" ? "text-green-200" : "text-red-600"}`}>
+                    quizResult && <p className={`mt-10 font-bold text-xl ${quizResult === "correct" ? "text-green-400" : "text-red-600"}`}>
                       {quizResult === "correct" ? "Correct!" : "Incorrect!"}
                     </p>
                   }
