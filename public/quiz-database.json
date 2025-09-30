@@ -198,7 +198,7 @@
       "answer": "b",
       "relevantCards": ["SOR/191", "SHD/013"],
       "relevantRule": " ",
-      "tags": ["vanguard ace", "han solo", "when played", "experience", "trigger resolution"]
+      "tags": ["vanguard ace", "han solo", "when played", "experience", "trigger"]
   },
   {
       "id": 11,
@@ -210,8 +210,8 @@
         "d": "They cannot play it."
       },
       "answer": "d",
-      "relevantCards": ["SHD/135", "SOR/190"],
+      "relevantCards": ["SHD/135", "SOR/203"],
       "relevantRule": " ",
-      "tags": ["kylo's tie silencer", "lothal insurgent", "random", "discard", "discard pile", "play a card", "initiative", "for this phase"]
+      "tags": ["kylo's tie silencer", "cunning", "random", "discard", "discard pile", "play a card", "initiative", "for this phase"]
 }
 ]
