@@ -84,7 +84,7 @@
                             setSelectedAnswer("");
                           }
                         }}>
-                          Next Quiz
+                          Next Question
                         </button>
                       : null
                   }
