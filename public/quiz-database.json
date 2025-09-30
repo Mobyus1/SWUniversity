@@ -19,7 +19,7 @@
     "choices": {
       "a": "Yes. SpecForce Soldier is a Rebel card so it must be drawn.",
       "b": "No. SpecForce Soldier is not a Rebel card, so it is not a valid choice.",
-      "c": "Yes. SpecForce Soldier has a When Played effect so it must be drawn.",
+      "c": "Yes. SpecForce Soldier has a When Played ability so it must be drawn.",
       "d": "No. It is possible to fail to find a card from a hidden zone, even if one exists."
     },
     "answer": "d",
@@ -137,7 +137,7 @@
   },
   {
     "id": 7,
-    "question": "Player A controls a deployed Darth Vader, Dark Lord of the Sith. Player B controls a Supercommando Squad with a Shield Token. Player A attacks Player B's base using Darth Vader's On Attack to deal 2 damage to the Supercommando Squad, defeating the Shield Token. Is this a legal attack?",
+    "question": "Player A controls a deployed Darth Vader, Dark Lord of the Sith. Player B controls a Supercommando Squad with a Shield Token. Player A attacks Player B's base using Darth Vader's On Attack to deal 2 damage to the Supercommando Squad, defeating the Shield Token. Is this a legal attack and why?",
     "choices": {
       "a": "Yes. Darth Vader's On Attack defeating the Shield Token means the Supercommando Squad is no longer upgraded and loses Sentinel.",
       "b": "Yes. The Supercommando Squad was not upgraded and therefore did not have Sentinel.",
@@ -199,5 +199,19 @@
       "relevantCards": ["SOR/191", "SHD/013"],
       "relevantRule": " ",
       "tags": ["vanguard ace", "han solo", "when played", "experience", "trigger resolution"]
-}
+  };
+  {
+      "id": 11,
+      "question": "Player A claims the initiative while still having 2 ready resources. Player B plays Cunning and chooses to have Player A discard a random card from their hand. Player A randomly discards Kylo TIE Silencer, Ruthlessly Efficient. When can Player A play the discarded Kylo's TIE Silencer from their discard pile?",
+      "choices": {
+        "a": "They can play it immediately in response to discarding it.",
+        "b": "They can play it as their next action.",
+        "c": "They can play it any time during the next round.",
+        "d": "They cannot play it."
+      },
+      "answer": "d",
+      "relevantCards": ["SHD/135", "SOR/190"],
+      "relevantRule": " ",
+      "tags": ["kylo's tie silencer", "lothal insurgent", "random", "discard", "discard pile", "play a card", "initiative", "for this phase"]
+};
 ]
