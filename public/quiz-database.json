@@ -185,7 +185,7 @@
       "answer": "a",
       "relevantCards": ["LOF/102", "IBH/016"],
       "relevantRule": " ",
-      "tags": ["yoda's lightsaber", "the force", "when played", "upgrade", "attach", "weapon", "lightsaber"]
+      "tags": ["yoda's lightsaber", "the force", "when played", "upgrade", "attach", "weapon", "lightsaber", "abilities"]
   },
   {
       "id": 10,
@@ -213,7 +213,7 @@
       "answer": "d",
       "relevantCards": ["SHD/135", "SOR/203"],
       "relevantRule": " ",
-      "tags": ["kylo's tie silencer", "cunning", "random", "discard", "discard pile", "play a card", "initiative", "for this phase"]
+      "tags": ["kylo's tie silencer", "cunning", "random", "discard", "discard pile", "play a card", "initiative", "for this phase", "abilities"]
   },
   {
       "id": 12,
@@ -227,6 +227,20 @@
       "answer": "c",
       "relevantCards": ["SOR/182", "SOR/177", "SHD/229"],
       "relevantRule": " ",
-      "tags": ["bossk", "bib fortuna", "ma klounkee", "shield token", "trigger", "shielded", "event", "bounce"]
-}
+      "tags": ["bossk", "bib fortuna", "ma klounkee", "shield token", "trigger", "shielded", "event", "bounce", "abilities"]
+   },
+   {
+      "id": 13,
+      "question": "Player B has 2 HP remaining on their base and controls a Krayt Dragon. Player A has 1 HP remaining on their base and plays a Daring Raid, targeting Player B's base. What best describes what happens?",
+      "choices": {
+        "a": "As the active player, Player A gets to choose which player resolves their triggers first and can choose to resolve Daring Raid before Player B resolves Krayt Dragon, meaning Player A wins the game.",
+        "b": "Events must fully resolve before any abilities that trigger because of them can resolve, meaning Player A wins the game.",
+        "c": "Since Krayt Dragon triggers whenever an opponent plays a card, it resolves before the Event, meaning Player B can deal 1 damage to Player A's base first, meaning Player A loses the game.",
+        "d": "As the player with more HP remaining on their base, Player B gets to choose which player resolves their triggers first and can choose to resolve Krayt Dragon before Player A resolves Daring Raid, meaning Player A loses the game."
+      },
+      "answer": "b",
+      "relevantCards": ["SHD/172", "SHD/178"],
+      "relevantRule": " ",
+      "tags": ["krayt dragon", "daring raid", "trigger", "event", "play a card", "timing", "abilities"]
+   }
 ]
