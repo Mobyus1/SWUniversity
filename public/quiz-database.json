@@ -192,7 +192,7 @@
       "choices": {
         "a": "Vanguard Ace enters play as a 3/3, then takes 2 damage from Han's ability.",
         "b": "Vanguard Ace enters play as a 1/1 and is defeated by Han's ability before its When Played resolves.",
-        "c": "It depends on how many units Player A has in play.",
+        "c": "It depends on how many of the two previously played cards were units.",
         "d": "Vanguard Ace cannot be played using Han's ability."
       },
       "answer": "b",
