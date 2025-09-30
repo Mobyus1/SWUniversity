@@ -87,7 +87,7 @@
   },
   {
     "id": 5,
-    "question": "Player A attacks Player B's base with Chimaera, Flagship of the Seventh Fleet, and names \"Maul.\" Player B reveals their hand which contains Maul, Shadow Collective Visionary, and Darth Maul, Revenge at Last. Which card can Player A make Player B discard?",
+    "question": "Player A attacks Player B's base with Chimaera, Flagship of the Seventh Fleet, and names \"Maul.\" Player B reveals their hand which contains Maul, Shadow Collective Visionary, and Darth Maul, Revenge at Last. Which card(s) can Player A make Player B discard?",
     "choices": {
       "a": "Only Maul, Shadow Collective Visionary.",
       "b": "Only Darth Maul, Revenge at Last.",
