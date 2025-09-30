@@ -1,17 +1,15 @@
 import React from 'react';
 
-import './Layout.css';
-
 function Layout({ children }: { children: React.ReactNode }) {
   return <main className="layout">
-      <div className="navbar">
+      <div className="relative navbar z-10">
         <div className="flex gap-4">
           <a className="btn btn-ghost text-xl" href="#/">Home</a>
           <a className="btn btn-ghost text-xl" href="#/quiz">Quiz</a>
           {/* <a className="btn btn-ghost text-xl" href="#/puzzles">Puzzles</a> */}
         </div>
       </div>
-      <div className="p-4">
+      <div className="relative p-4 z-10">
         {children}
       </div>
     </main>;

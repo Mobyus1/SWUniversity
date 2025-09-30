@@ -2,3 +2,16 @@
 @plugin "daisyui" {
   themes: all;
 }
+
+.layout {
+  @apply relative bg-[url('/assets/SWH01_Starfield.png')] bg-cover bg-center min-h-screen overflow-hidden;
+}
+
+.layout::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: black;
+  opacity: 0.57;
+  z-index: 0;
+}
