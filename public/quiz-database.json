@@ -114,11 +114,11 @@
   },
   {
     "id": 6,
-    "question": "Player A plays a Privateer Scyk with no other units in play. On their next action, they play Liberated Slaves. Does their Privateer Scyk get a Shield Token and why?",
+    "question": "Player A plays a Privateer Scyk with no other units in play. On their next action, they play Liberated Slaves. Does their Privateer Scyk get a shield token and why?",
     "choices": {
-      "a": "Yes. Player A now controls another Cunning unit so Privateer Scyk gains Shielded.",
+      "a": "Yes. Player A now controls another Cunning unit so Privateer Scyk gains Shielded and a shield token.",
       "b": "No. Even though Player A now controls another Cunning unit, the trigger timing for Shielded has passed.",
-      "c": "Yes, but only because Privateer Scyk did not get a Shield Token earlier in the round.",
+      "c": "Yes, but only because Privateer Scyk did not get a shield token earlier in the round.",
       "d": "No. Liberated Slaves has both the Cunning and Heroism aspects and therefore does not satisfy Privateer Scyk's requirements."
     },
     "answer": "b",
@@ -137,9 +137,9 @@
   },
   {
     "id": 7,
-    "question": "Player A controls a deployed Darth Vader, Dark Lord of the Sith. Player B controls a Supercommando Squad with a Shield Token. Player A attacks Player B's base using Darth Vader's On Attack to deal 2 damage to the Supercommando Squad, defeating the Shield Token. Is this a legal attack and why?",
+    "question": "Player A controls a deployed Darth Vader, Dark Lord of the Sith. Player B controls a Supercommando Squad with a shield token. Player A attacks Player B's base using Darth Vader's On Attack to deal 2 damage to the Supercommando Squad, defeating the shield token. Is this a legal attack and why?",
     "choices": {
-      "a": "Yes. Darth Vader's On Attack defeating the Shield Token means the Supercommando Squad is no longer upgraded and loses Sentinel.",
+      "a": "Yes. Darth Vader's On Attack defeating the shield token means the Supercommando Squad is no longer upgraded and loses Sentinel.",
       "b": "Yes. The Supercommando Squad was not upgraded and therefore did not have Sentinel.",
       "c": "Yes. Since Darth Vader is a leader unit, it ignores Sentinel.",
       "d": "No. The Supercommando Squad had Sentinel when the attack was declared, meaning it was the only legal target for the attack."
@@ -158,7 +158,8 @@
       "upgrade",
       "legal target",
       "on attack",
-      "combat steps"
+      "combat steps",
+      "shield token"
     ]
   },
   {
@@ -202,7 +203,7 @@
   },
   {
       "id": 11,
-      "question": "Player A claims the initiative while still having 2 ready resources. Player B plays Cunning and chooses to have Player A discard a random card from their hand. Player A randomly discards Kylo TIE Silencer, Ruthlessly Efficient. When can Player A play the discarded Kylo's TIE Silencer from their discard pile?",
+      "question": "Player A claims the initiative while still having 2 ready resources. Player B plays Cunning and chooses to have Player A discard a random card from their hand. Player A randomly discards Kylo's TIE Silencer, Ruthlessly Efficient. When can Player A play the discarded Kylo's TIE Silencer from their discard pile?",
       "choices": {
         "a": "They can play it immediately in response to discarding it.",
         "b": "They can play it as their next action.",
@@ -213,5 +214,19 @@
       "relevantCards": ["SHD/135", "SOR/203"],
       "relevantRule": " ",
       "tags": ["kylo's tie silencer", "cunning", "random", "discard", "discard pile", "play a card", "initiative", "for this phase"]
+  },
+  {
+      "id": 12,
+      "question": "Player A controls Bossk, Deadly Stalker, and Player B controls Bib Fortuna, Jabba's Majordomo, with a shield token. Player A plays Ma Klounkee returning Bossk to hand. Does this defeat Bib Fortuna and why?",
+      "choices": {
+        "a": "Yes. As the active player, Player A can choose the order triggers resolve and can choose to resolve Bossk's ability before Ma Klounkee, defeating the shield token before the 3 damage.",
+        "b": "No. Since Bossk was returned to hand, his ability does not resolve. Ma Klounkee defeats the shield token and Bib takes no damage.",
+        "c": "No. When an Event is played, it must fully resolve before any abilities that trigger because of it can resolve. Therefore Ma Klounkee's damage defeats the shield token first, then Bossk's 2 damage is dealt after.",
+        "d": "No. Ma Klounkee cannot return Bossk to hand and therefore does no damage."
+      },
+      "answer": "c",
+      "relevantCards": ["SOR/182", "SOR/177", "SHD/229"],
+      "relevantRule": " ",
+      "tags": ["bossk", "bib fortuna", "ma klounkee", "shield token", "trigger", "shielded", "event", "bounce"]
 }
 ]
