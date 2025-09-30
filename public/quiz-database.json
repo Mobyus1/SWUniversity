@@ -221,7 +221,7 @@
       "choices": {
         "a": "Yes. As the active player, Player A can choose the order triggers resolve and can choose to resolve Bossk's ability before Ma Klounkee, defeating the shield token before the 3 damage.",
         "b": "No. Since Bossk was returned to hand, his ability does not resolve. Ma Klounkee defeats the shield token and Bib takes no damage.",
-        "c": "No. When an Event is played, it must fully resolve before any abilities that trigger because of it can resolve. Therefore Ma Klounkee's damage defeats the shield token first, then Bossk's 2 damage is dealt after.",
+        "c": "No. Events must fully resolve before any abilities that trigger because of them can resolve. Therefore Ma Klounkee's damage defeats the shield token first, then Bossk's 2 damage is dealt after.",
         "d": "No. Ma Klounkee cannot return Bossk to hand and therefore does no damage."
       },
       "answer": "c",
