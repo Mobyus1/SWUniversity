@@ -64,7 +64,7 @@
                             const updatedCompleted = [...quizzesCompleted, currentQuiz];
                             setQuizzesCompleted(updatedCompleted);
                             if(updatedCompleted.length === allQuizzes.length) {
-                              alert("You've completed all quizzes!");
+                              alert("You've correctly answered every question!");
                             } else {
                               let nextQuiz = currentQuiz;
                               while(updatedCompleted.includes(nextQuiz)) {
@@ -90,7 +90,7 @@
                   }
                   </form>
                   {
-                    quizResult && <p className={`mt-10 font-bold text-xl ${quizResult === "correct" ? "text-green-800" : "text-red-600"}`}>
+                    quizResult && <p className={`mt-10 font-bold text-xl ${quizResult === "correct" ? "text-green-600" : "text-red-600"}`}>
                       {quizResult === "correct" ? "Correct!" : "Incorrect!"}
                     </p>
                   }
