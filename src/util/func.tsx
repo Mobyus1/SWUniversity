@@ -1,25 +1,21 @@
 export type Quiz = {
   id: number;
   question: string;
-  choices: string[];
-  answer: number;
+  choices: {
+    [key: string]: string
+  };
+  answer: string;
   relevantCards: string[];
   relevantRule: string;
   tags: string[];
 }
 
-const includedPhases = [
-  '2025-09-28',
-]
+const notBeforeId = 1;
+const excludedIds: number[] = [];
 
 export async function getQuizDataAsync() : Promise<Quiz[]> {
-  const allQuizzes: Quiz[] = [];
-  for (const phase of includedPhases) {
-    const quizzes = await fetch(`/quizzes/${phase}.json`)
-      .then(response => response.json())
-      .then(data => data);
-    allQuizzes.push(...quizzes);
-  }
+  const response = await fetch('/quiz-database.json');
+  const data = await response.json();
 
-  return allQuizzes;
+  return data.filter((quiz: Quiz) => quiz.id >= notBeforeId && !excludedIds.includes(quiz.id));
 }

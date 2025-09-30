@@ -2,8 +2,13 @@
   {
       "id": 1,
       "question": "Player A has the initiative and a Baze Malbus, Temple Guardian, in play. Player B plays a SpecForce Soldier and targets Baze Malbus, causing it to lose Sentinel for the phase. Later in the same phase, Player A plays Protector and attaches it to their Baze Malbus. What best describes what happens?",
-      "choices": ["Protector gives Baze Malbus both +1/+1 and Sentinel immediately.", "Protector gives Baze +1/+1 immediately, but he cannot regain Sentinel until the end of the phase.", "Protector waits until the end of the phase to give Baze both +1/+1 and Sentinel.", "Protector cannot be attached to Baze."],
-      "answer": 1,
+      "choices": {
+        "a": "Protector gives Baze Malbus both +1/+1 and Sentinel immediately.",
+        "b": "Protector gives Baze +1/+1 immediately, but he cannot regain Sentinel until the end of the phase.",
+        "c": "Protector waits until the end of the phase to give Baze both +1/+1 and Sentinel.",
+        "d": "Protector cannot be attached to Baze."
+      },
+      "answer": "b",
       "relevantCards": ["SOR/065", "SOR/140", "SOR/057"],
       "relevantRule": " ",
       "tags": ["baze malbus","specforce soldier","protector","sentinel","abilities","losing abilities","upgrade"]
@@ -11,13 +16,13 @@
   {
     "id": 2,
     "question": "Player A plays Mon Mothma, Voice of the Rebellion. Among the searched cards, they find a SpecForce Soldier. Do they have to draw it?",
-    "choices": [
-      "Yes. SpecForce Soldier is a Rebel card so it must be drawn.",
-      "No. SpecForce Soldier is not a Rebel card, so it is not a valid choice.",
-      "Yes. SpecForce Soldier has a When Played effect so it must be drawn.",
-      "No. It is possible to fail to find a card from a hidden zone, even if one exists."
-    ],
-    "answer": 3,
+    "choices": {
+      "a": "Yes. SpecForce Soldier is a Rebel card so it must be drawn.",
+      "b": "No. SpecForce Soldier is not a Rebel card, so it is not a valid choice.",
+      "c": "Yes. SpecForce Soldier has a When Played effect so it must be drawn.",
+      "d": "No. It is possible to fail to find a card from a hidden zone, even if one exists."
+    },
+    "answer": "d",
     "relevantCards": [
       "SOR/096",
       "SOR/140"
@@ -36,13 +41,13 @@
   {
     "id": 3,
     "question": "Player A plays Chewbacca, Faithful First Mate, as a Pilot, attaching him to a friendly Cartel Turncoat. Player B then plays Spare the Target, targeting Player A's Cartel Turncoat. What best describes what happens?",
-    "choices": [
-      "Cartel Turncoat is returned to Player A's hand, defeating Chewbacca, and Player B draws a card.",
-      "Chewbacca prevents Cartel Turncoat from being returned to hand, so nothing happens.",
-      "Chewbacca prevents Cartel Turncoat from being returned to hand, but Player B still draws a card.",
-      "Chewbacca's ability prevents Spare the Target from being played on Cartel Turncoat, so this play is illegal."
-    ],
-    "answer": 2,
+    "choices": {
+      "a": "Cartel Turncoat is returned to Player A's hand, defeating Chewbacca, and Player B draws a card.",
+      "b": "Chewbacca prevents Cartel Turncoat from being returned to hand, so nothing happens.",
+      "c": "Chewbacca prevents Cartel Turncoat from being returned to hand, but Player B still draws a card.",
+      "d": "Chewbacca's ability prevents Spare the Target from being played on Cartel Turncoat, so this play is illegal."
+    },
+    "answer": "c",
     "relevantCards": [
       "JTL/103",
       "SHD/195",
@@ -61,13 +66,13 @@
   {
     "id": 4,
     "question": "Player A is playing the leader Grand Inquisitor, Hunting the Jedi, and has a Hylobon Enforcer with 1 damage on it in play. They use Grand Inquisitor's leader ability, targeting their Hylobon Enforcer. What best describes what happens?",
-    "choices": [
-      "Hylobon Enforcer takes 2 damage, becoming a 4/1, then readies.",
-      "Hylobon Enforcer takes 2 damage, becoming a 4/1, and does not ready.",
-      "Hylobon Enforcer is not a valid target because the 2 damage would result in it having more than 3 power.",
-      "Hylobon Enforcer is not a valid target because it is not an Aggression unit."
-    ],
-    "answer": 0,
+    "choices": {
+      "a": "Hylobon Enforcer takes 2 damage, becoming a 4/1, then readies.",
+      "b": "Hylobon Enforcer takes 2 damage, becoming a 4/1, and does not ready.",
+      "c": "Hylobon Enforcer is not a valid target because the 2 damage would result in it having more than 3 power.",
+      "d": "Hylobon Enforcer is not a valid target because it is not an Aggression unit."
+    },
+    "answer": "a",
     "relevantCards": [
       "SOR/011",
       "SHD/027"
@@ -83,13 +88,13 @@
   {
     "id": 5,
     "question": "Player A attacks Player B's base with Chimaera, Flagship of the Seventh Fleet, and names \"Maul.\" Player B reveals their hand which contains Maul, Shadow Collective Visionary, and Darth Maul, Revenge at Last. Which card can Player A make Player B discard?",
-    "choices": [
-      "Only Maul, Shadow Collective Visionary.",
-      "Only Darth Maul, Revenge at Last.",
-      "Either of the two.",
-      "Neither of the two."
-    ],
-    "answer": 0,
+    "choices": {
+      "a": "Only Maul, Shadow Collective Visionary.",
+      "b": "Only Darth Maul, Revenge at Last.",
+      "c": "Either of the two.",
+      "d": "Neither of the two."
+    },
+    "answer": "a",
     "relevantCards": [
       "SOR/185",
       "SHD/090",
@@ -110,13 +115,13 @@
   {
     "id": 6,
     "question": "Player A plays a Privateer Scyk with no other units in play. On their next action, they play Liberated Slaves. Does their Privateer Scyk get a Shield Token and why?",
-    "choices": [
-      "Yes. Player A now controls another Cunning unit so Privateer Scyk gains Shielded.",
-      "No. Even though Player A now controls another Cunning unit, the trigger timing for Shielded has passed.",
-      "Yes, but only because Privateer Scyk did not get a Shield Token earlier in the round.",
-      "No. Liberated Slaves has both the Cunning and Heroism aspects and therefore does not satisfy Privateer Scyk's requirements."
-    ],
-    "answer": 1,
+    "choices": {
+      "a": "Yes. Player A now controls another Cunning unit so Privateer Scyk gains Shielded.",
+      "b": "No. Even though Player A now controls another Cunning unit, the trigger timing for Shielded has passed.",
+      "c": "Yes, but only because Privateer Scyk did not get a Shield Token earlier in the round.",
+      "d": "No. Liberated Slaves has both the Cunning and Heroism aspects and therefore does not satisfy Privateer Scyk's requirements."
+    },
+    "answer": "b",
     "relevantCards": [
       "SHD/212",
       "SHD/200"
@@ -133,13 +138,13 @@
   {
     "id": 7,
     "question": "Player A controls a deployed Darth Vader, Dark Lord of the Sith. Player B controls a Supercommando Squad with a Shield Token. Player A attacks Player B's base using Darth Vader's On Attack to deal 2 damage to the Supercommando Squad, defeating the Shield Token. Is this a legal attack?",
-    "choices": [
-      "Yes. Darth Vader's On Attack defeating the Shield Token means the Supercommando Squad is no longer upgraded and loses Sentinel.",
-      "Yes. The Supercommando Squad was not upgraded and therefore did not have Sentinel.",
-      "Yes. Since Darth Vader is a leader unit, it ignores Sentinel.",
-      "No. The Supercommando Squad had Sentinel when the attack was declared, meaning it was the only legal target for the attack."
-    ],
-    "answer": 3,
+    "choices": {
+      "a": "Yes. Darth Vader's On Attack defeating the Shield Token means the Supercommando Squad is no longer upgraded and loses Sentinel.",
+      "b": "Yes. The Supercommando Squad was not upgraded and therefore did not have Sentinel.",
+      "c": "Yes. Since Darth Vader is a leader unit, it ignores Sentinel.",
+      "d": "No. The Supercommando Squad had Sentinel when the attack was declared, meaning it was the only legal target for the attack."
+    },
+    "answer": "d",
     "relevantCards": [
       "SOR/010-portrait",
       "SHD/034",
@@ -159,8 +164,13 @@
   {
       "id": 8,
       "question": "Player A controls Grogu, Irresistable. Player B controls an exhausted Death Star Stormtrooper, a ready TIE/ln Fighter, and a deployed and ready Grand Moff Tarkin, Oversector Governor. Which of the above is NOT a valid target for Grogu's ability?",
-      "choices": ["The Death Star Stormtrooper because it is already exhausted.", "The TIE/ln Fighter because it is a space unit.", "Grand Moff Tarkin because he is a leader unit.", "They are all valid targets."],
-      "answer": 3,
+      "choices": {
+        "a": "The Death Star Stormtrooper because it is already exhausted.",
+        "b": "The TIE/ln Fighter because it is a space unit.",
+        "c": "Grand Moff Tarkin because he is a leader unit.",
+        "d": "They are all valid targets."
+      },
+      "answer": "d",
       "relevantCards": ["SHD/196", "SOR/128", "SOR/225", "SOR/007-portrait"],
       "relevantRule": " ",
       "tags": ["grogu", "exhaust", "action ability"]
@@ -168,8 +178,10 @@
   {
       "id": 9,
       "question": "Player A has The Force and plays Yoda's Lightsaber, attaching it to a friendly Ion Cannon. They resolve the When Played ability on Yoda's Lightsaber, spending their Force Token and healing their base for 3. Is this play legal?",
-      "choices": ["Yes, but it's ridiculous."],
-      "answer": 0,
+      "choices": {
+        "a": "Yes, but it's ridiculous."
+      },
+      "answer": "a",
       "relevantCards": ["LOF/102", "IBH/016"],
       "relevantRule": " ",
       "tags": ["yoda's lightsaber", "the force", "when played", "upgrade", "attach", "weapon", "lightsaber"]

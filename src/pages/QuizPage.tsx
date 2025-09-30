@@ -18,18 +18,19 @@
 
     const renderChoices = () => {
       if(allQuizzes.length === 0) return null;
-      const divs = allQuizzes[currentQuiz].choices.map((choice: string, index: number) => <div key={index} className="mb-2.5">
+      const choiceKeys = Object.keys(allQuizzes[currentQuiz].choices);
+      const divs = choiceKeys.map((key, index) => <div key={index} className="mb-2.5">
           <label className="text-lg">
             <input
               type="radio"
               name="quiz-choice"
-              value={index}
+              value={choiceKeys[index]}
               className="mr-2.5 scale-110"
-              checked={selectedAnswer === String(index)}
-              onChange={() => setSelectedAnswer(String(index))}
+              checked={selectedAnswer === choiceKeys[index]}
+              onChange={() => setSelectedAnswer(choiceKeys[index])}
               disabled={quizResult !== ""}
             />
-            {choice}
+            {allQuizzes[currentQuiz].choices[key]}
           </label>
         </div>
       );
@@ -123,9 +124,8 @@
       currentQuiz: number,
       setQuizResult: (result: string) => void
     ) {
-    if(selectedIndex) {
-      console.log("Selected answer index:", selectedIndex);
-      setQuizResult(Number.parseInt(selectedIndex) === allQuizzes[currentQuiz].answer ? "correct" : "incorrect");
+    if (selectedIndex) {
+      setQuizResult(selectedIndex === allQuizzes[currentQuiz].answer ? "correct" : "incorrect");
     }
   }
 
