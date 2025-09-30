@@ -174,4 +174,13 @@
       "relevantRule": " ",
       "tags": ["yoda's lightsaber", "the force", "when played", "upgrade", "attach", "weapon", "lightsaber"]
   }
+  {
+      "id": 10,
+      "question": "This is a test question. Answer B is correct.",
+      "choices": ["Answer A.", "Answer B.", "Answer C.", "Answer D."],
+      "answer": 1,
+      "relevantCards": ["LOF/110"],
+      "relevantRule": " ",
+      "tags": [" "]
+  }
 ]
