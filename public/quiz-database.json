@@ -185,5 +185,19 @@
       "relevantCards": ["LOF/102", "IBH/016"],
       "relevantRule": " ",
       "tags": ["yoda's lightsaber", "the force", "when played", "upgrade", "attach", "weapon", "lightsaber"]
-  }
+  },
+  {
+      "id": 10,
+      "question": "Player A has played two cards already this phase. Player A then uses Han Solo, Worth the Risk's leader ability to play Vanguard Ace. What best describes what happens?",
+      "choices": {
+        "a": "Vanguard Ace enters play as a 3/3, then takes 2 damage from Han's ability.",
+        "b": "Vanguard Ace enters play as a 1/1 and is defeated by Han's ability before its When Played resolves.",
+        "c": "It depends on how many units Player A has in play.",
+        "d": "Vanguard Ace cannot be played using Han's ability."
+      },
+      "answer": "b",
+      "relevantCards": ["SOR/191", "SHD/013"],
+      "relevantRule": " ",
+      "tags": ["vanguard ace", "han solo", "when played", "experience", "trigger resolution"]
+}
 ]
