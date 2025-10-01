@@ -65,7 +65,7 @@
   },
   {
     "id": 4,
-    "question": "Player A is playing the leader Grand Inquisitor, Hunting the Jedi, and has a Hylobon Enforcer with 1 damage on it in play. They use Grand Inquisitor's leader ability, targeting their Hylobon Enforcer. What best describes what happens?",
+    "question": "Player A is playing the leader Grand Inquisitor, Hunting the Jedi, and has an exhausted Hylobon Enforcer with 1 damage on it in play. They use Grand Inquisitor's leader ability, targeting their Hylobon Enforcer. What best describes what happens?",
     "choices": {
       "a": "Hylobon Enforcer takes 2 damage, becoming a 4/1, then readies.",
       "b": "Hylobon Enforcer takes 2 damage, becoming a 4/1, and does not ready.",
@@ -126,7 +126,7 @@
       "SHD/212",
       "SHD/200"
     ],
-    "relevantRule": " ",
+    "relevantRule": "While Privateer Scyk would technically gain the keyword Shielded while Liberated Slaves is in play, Shielded is a keyword that resolves when the unit is played, meaning it would not get a shield token unless Liberated Slaves (or any friendly Cunning unit) was in play at the time Privateer Scyk was played.",
     "tags": [
       "privateer scyk",
       "shielded",
@@ -137,12 +137,12 @@
   },
   {
     "id": 7,
-    "question": "Player A controls a deployed Darth Vader, Dark Lord of the Sith. Player B controls a Supercommando Squad with a shield token. Player A attacks Player B's base using Darth Vader's On Attack to deal 2 damage to the Supercommando Squad, defeating the shield token. Is this a legal attack and why?",
+    "question": "Player A controls a deployed Darth Vader, Dark Lord of the Sith. Player B controls a Supercommando Squad with a shield token and no other units. Player A declares that they are attacking with Darth Vader and use his On Attack to deal 2 damage to Supercommando Squad, defeating its shield token. Player A then declares Player B's base as the target for Darth Vader's attack and deals 5 damage to it. Is this a legal attack and why or why not?",
     "choices": {
       "a": "Yes. Darth Vader's On Attack defeating the shield token means the Supercommando Squad is no longer upgraded and loses Sentinel.",
-      "b": "Yes. The Supercommando Squad was not upgraded and therefore did not have Sentinel.",
-      "c": "Yes. Since Darth Vader is a leader unit, it ignores Sentinel.",
-      "d": "No. The Supercommando Squad had Sentinel when the attack was declared, meaning it was the only legal target for the attack."
+      "b": "Yes. The Supercommando Squad was not upgraded and therefore did not have Sentinel in the first place.",
+      "c": "No. Since Darth Vader is attacking Player B's base, his On Attack cannot damage the Supercommando Squad.",
+      "d": "No. The target of an attack must be declared before any On Attack abilities resolve. Since the Supercommando Squad had Sentinel when the attack was declared, they must be the target of the attack."
     },
     "answer": "d",
     "relevantCards": [
@@ -194,7 +194,7 @@
         "a": "Vanguard Ace enters play as a 3/3, then takes 2 damage from Han's ability.",
         "b": "Vanguard Ace enters play as a 1/1 and is defeated by Han's ability before its When Played resolves.",
         "c": "It depends on how many of the two previously played cards were units.",
-        "d": "Vanguard Ace cannot be played using Han's ability."
+        "d": "Player A gets to decide in what order Han's ability and Vanguard Ace's abilities resolve."
       },
       "answer": "b",
       "relevantCards": ["SOR/191", "SHD/013"],
@@ -226,7 +226,10 @@
       },
       "answer": "c",
       "relevantCards": ["SOR/182", "SOR/177", "SHD/229"],
-      "relevantRule": " ",
+      "relevantRule": "Even though Bossk's ability triggers as soon as Ma Klounkee is played, it waits to resolve until after the Event has finished resolving, even if Bossk is no longer in play.
+           \n3.3.6 - If a triggered ability has the triggering condition \"When you play an event,\" the event ability must be resolved as completely as possible before resolving the triggered ability.
+           \n7.6.3 - For a triggered ability to resolve, the card with the ability must be in play when the triggering condition occurs, unless the ability specifies that it can be triggered from an out-of-play zone. Additionally, the triggered ability must resolve once triggered, even if the card with the ability leaves play before the triggered ability resolves.
+           \n7.6.8 - If an ability triggers during or as the result of a non-attack action, resolve that ability at the next available opportunity after that action is fully completed. If an ability triggers during an attack, resolve that ability at the appropriate timing point within that attack. Resolving a triggered ability never interrupts an action or ability that is currently resolving (other than the specified timing points during an attack), unless the currently resolving action or ability uses \"after,\" as described below. See 6.3. Attack With a Unit",
       "tags": ["bossk", "bib fortuna", "ma klounkee", "shield token", "trigger", "shielded", "event", "bounce", "abilities"]
    },
    {
@@ -236,7 +239,7 @@
         "a": "As the active player, Player A gets to choose which player resolves their triggers first and can choose to resolve Daring Raid before Player B resolves Krayt Dragon, meaning Player A wins the game.",
         "b": "Events must fully resolve before any abilities that trigger because of them can resolve, meaning Player A wins the game.",
         "c": "Since Krayt Dragon triggers whenever an opponent plays a card, it resolves before the Event, meaning Player B can deal 1 damage to Player A's base first, meaning Player A loses the game.",
-        "d": "As the player with more HP remaining on their base, Player B gets to choose which player resolves their triggers first and can choose to resolve Krayt Dragon before Player A resolves Daring Raid, meaning Player A loses the game."
+        "d": "Both players take damage to their bases at the same time. The game ends in a draw."
       },
       "answer": "b",
       "relevantCards": ["SHD/172", "SHD/178"],
