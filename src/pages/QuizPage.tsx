@@ -4,7 +4,8 @@
 
   function QuizPage() {
     const [allQuizzes, setAllQuizzes] = React.useState<Quiz[]>([]);
-    const [currentQuiz, setCurrentQuiz] = React.useState(0);
+    const [currentQuizId, setCurrentQuizId] = React.useState(0);
+    const [currentQuizKeys, setCurrentQuizKeys] = React.useState<string[]>([]);
     const [quizzesCompleted, setQuizzesCompleted] = React.useState<number[]>([]);
     const [selectedAnswer, setSelectedAnswer] = React.useState<string>("");
     const [quizResult, setQuizResult] = React.useState<string>("");
@@ -13,25 +14,32 @@
     React.useEffect(() => {
       getQuizDataAsync().then(data => {
         setAllQuizzes(data);
-        setCurrentQuiz(Math.floor(Math.random() * data.length));
+        setCurrentQuizId(Math.floor(Math.random() * data.length));
       });
     }, []);
 
     const renderChoices = () => {
       if(allQuizzes.length === 0) return null;
-      const choiceKeys = Object.keys(allQuizzes[currentQuiz].choices);
-      const divs = choiceKeys.map((key, index) => <div key={index} className="mb-2.5">
+      if(!currentQuizKeys || currentQuizKeys.length === 0) {
+        const choiceKeys = Object.keys(allQuizzes[currentQuizId].choices);
+        for (let i = choiceKeys.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [choiceKeys[i], choiceKeys[j]] = [choiceKeys[j], choiceKeys[i]];
+        }
+        setCurrentQuizKeys(choiceKeys);
+      }
+      const divs = currentQuizKeys.map((_, index) => <div key={index} className="mb-2.5">
           <label className="text-md md:text-lg">
             <input
               type="radio"
               name="quiz-choice"
-              value={choiceKeys[index]}
+              value={currentQuizKeys[index]}
               className="mr-2.5 md:scale-110"
-              checked={selectedAnswer === choiceKeys[index]}
-              onChange={() => setSelectedAnswer(choiceKeys[index])}
+              checked={selectedAnswer === currentQuizKeys[index]}
+              onChange={() => setSelectedAnswer(currentQuizKeys[index])}
               disabled={quizResult !== ""}
             />
-            {allQuizzes[currentQuiz].choices[key]}
+            {allQuizzes[currentQuizId].choices[currentQuizKeys[index]]}
           </label>
         </div>
       );
@@ -46,32 +54,32 @@
           ? <p className="text-lg">Loading quizzes...</p>
           : <div>
             {
-                allQuizzes[currentQuiz] && <div className="grid md:grid-cols-[40%_60%] border p-8 rounded shadow-md gap-4">
+                allQuizzes[currentQuizId] && <div className="grid md:grid-cols-[40%_60%] border p-8 rounded shadow-md gap-4">
                 {/* Question and choices */}
                 <div>
-                  <p className="mb-2.5 text-lg md:text-xl">{allQuizzes[currentQuiz].question}</p>
+                  <p className="mb-2.5 text-lg md:text-xl">{allQuizzes[currentQuizId].question}</p>
                   <form onSubmit={(e) => {
                     e.preventDefault();
                     const form = e.target as HTMLFormElement;
                     const quizChoice = form.elements.namedItem('quiz-choice') as HTMLInputElement;
-                    onSubmitAnswer(quizChoice.value, allQuizzes, currentQuiz, setQuizResult);
+                    onSubmitAnswer(quizChoice.value, allQuizzes, currentQuizId, setQuizResult);
                   }}>
                   {renderChoices()}
                   {!quizResult && <button type="submit" className="btn btn-primary mt-4 text-lg p-4">Submit Answer</button>}
                   {
                     quizResult && quizzesCompleted.length < allQuizzes.length
                       ? <button className="btn btn-secondary mt-4 text-lg p-4" onClick={() => {
-                          if(selectedAnswer === allQuizzes[currentQuiz].answer.toString()) {
-                            const updatedCompleted = [...quizzesCompleted, currentQuiz];
+                          if(selectedAnswer === allQuizzes[currentQuizId].answer.toString()) {
+                            const updatedCompleted = [...quizzesCompleted, currentQuizId];
                             setQuizzesCompleted(updatedCompleted);
                             if(updatedCompleted.length === allQuizzes.length) {
                               alert("You've correctly answered every question!");
                             } else {
-                              let nextQuiz = currentQuiz;
+                              let nextQuiz = currentQuizId;
                               while(updatedCompleted.includes(nextQuiz)) {
                                 nextQuiz = Math.floor(Math.random() * allQuizzes.length);
                               }
-                              setCurrentQuiz(nextQuiz);
+                              setCurrentQuizId(nextQuiz);
                               setQuizResult("");
                               setSelectedAnswer("");
                             }
@@ -80,7 +88,7 @@
                             while(quizzesCompleted.includes(nextQuiz)) {
                                 nextQuiz = Math.floor(Math.random() * allQuizzes.length);
                             }
-                            setCurrentQuiz(nextQuiz);
+                            setCurrentQuizId(nextQuiz);
                             setQuizResult("");
                             setSelectedAnswer("");
                           }
@@ -99,12 +107,12 @@
                 {/* Images */}
                 <div className="flex-1 flex flex-[0_0_50%] flex-wrap items-center justify-center">
                 {
-                  allQuizzes[currentQuiz].relevantCards && allQuizzes[currentQuiz].relevantCards.length > 0 && <div>
+                  allQuizzes[currentQuizId].relevantCards && allQuizzes[currentQuizId].relevantCards.length > 0 && <div>
                     <div className="text-xl mb-2.5 mr-2">Relevant Cards</div>
                     <div className="text-sm"><u onClick={() => setShowModal(true)}>(Click here to see enlarged images)</u></div>
                     <div className="flex flex-wrap justify-center">
                       {
-                        allQuizzes[currentQuiz].relevantCards.map((cardName: string, index: number) => <div key={index} className="w-fit h-72 m-2.5">
+                        allQuizzes[currentQuizId].relevantCards.map((cardName: string, index: number) => <div key={index} className="w-fit h-72 m-2.5">
                           <img src={`https://swudb.com/cdn-cgi/image/quality=40/images/cards/${cardName}.png`} alt={`card ${cardName}`} className="max-h-full object-contain" />
                         </div>)
                       }
@@ -114,20 +122,20 @@
                 </div>
                 {/* Relevant rule */}
                 {
-                  quizResult && allQuizzes[currentQuiz].relevantRule != " " && <div className="md:col-span-2 mt-4">
+                  quizResult && allQuizzes[currentQuizId].relevantRule != " " && <div className="md:col-span-2 mt-4">
                     <p className="text-xl mb-2.5">Relevant Rules:</p>
-                    <p className="whitespace-pre-wrap">{allQuizzes[currentQuiz].relevantRule}</p>
+                    <p className="whitespace-pre-wrap">{allQuizzes[currentQuizId].relevantRule}</p>
                   </div>
                 }
                 {/*Relevant Cards Modal*/}
                 {
-                  allQuizzes[currentQuiz].relevantCards &&
-                  allQuizzes[currentQuiz].relevantCards.length > 0 &&
+                  allQuizzes[currentQuizId].relevantCards &&
+                  allQuizzes[currentQuizId].relevantCards.length > 0 &&
                   showModal && <div className="overflow-y-scroll fixed inset-0 bg-black bg-opacity-70 flex flex-wrap" onClick={() => setShowModal(false)}>
                     <p className="absolute top-2 md:top-4 right-4 md:right-8 text-gray-400 md:text-4xl" onClick={() => setShowModal(false)}>X</p>
                     <div className="flex flex-wrap justify-center py-8 md:px-24">
                     {
-                      allQuizzes[currentQuiz].relevantCards.map((cardName: string, index: number) => <div key={index} className="w-fit h-100 md:h-120 m-2.5">
+                      allQuizzes[currentQuizId].relevantCards.map((cardName: string, index: number) => <div key={index} className="w-fit h-100 md:h-120 m-2.5">
                         <img src={`https://swudb.com/cdn-cgi/image/quality=40/images/cards/${cardName}.png`} alt={`card ${cardName}`} className="max-h-full object-contain" />
                       </div>)
                     }
