@@ -270,5 +270,33 @@
       "relevantCards": ["SOR/193", "JTL/094"],
       "relevantRule": "When a unit returns to hand, all upgrades attached to it are defeated, meaning Player A has the choice to make Luke a ground unit. If they do, the timing for readying cards during the Regroup Phase has already passed (that's when Millennium Falcon's ability triggered), meaning he will remain exhausted leading into the next round.",
       "tags": ["millennium falcon", "luke skywalker", "trigger", "timing", "regroup phase", "bounce", "pilot", "ability"]
-    }
+   },
+   {
+      "id": 16,
+      "question": "Player A plays Rallying Cry. Later in the same phase, Player A deploys Leia Organa, Alliance General. Assuming there are no other relevant effects, how much damage would Leia do when she attacks?",
+      "choices": {
+        "a": "3",
+        "b": "4", 
+        "c": "5",
+        "d": "6"
+      },
+      "answer": "b",
+      "relevantCards": ["SOR/154", "SOR/009-portrait"],
+      "relevantRule": "Only units in-play at the time a lasting effect is created, such as Rallying Cry, benefit from the effect.",
+      "tags": ["rallying cry", "leia organa", "lasting effect", "raid", "event"]
+   },
+   {
+      "id": 17,
+      "question": "Player A controls Boba Fett, Any Methods Necessary, attached to a TIE Bomber as a Pilot and no other units. If they were to play a Fett's Firespray, Pursuing the Bounty, would it ready as a result of its When Played ability?",
+      "choices": {
+        "a": "Yes. Player A still controls Boba Fett.",
+        "b": "No. The reminder text does not specify 'as an upgrade' which is what Boba Fett currently is.", 
+        "c": "No. This version of Boba Fett was released in a different card set and therefore does not work with this Fett's Firespray.",
+        "d": "It depends on if there are any Boba Fett units in Player A's discard pile."
+      },
+      "answer": "a",
+      "relevantCards": ["JTL/009-portrait", "JTL/237", "SOR/184"],
+      "relevantRule": "Italicized reminder text on cards has no impact on game rules and can be wholly ignored when reading a card's effect. In the case of Fett's Firespray, so long as the player controls any Boba Fett in any form, it can ready as a result of its When Played ability. ",
+      "tags": ["fett's firespray", "boba fett", "readying", "when played", "pilot", "control"]
+   }
 ]
