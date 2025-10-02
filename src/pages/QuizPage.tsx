@@ -94,7 +94,6 @@
                       {quizResult === "correct" ? "Correct!" : "Incorrect!"}
                     </p>
                   }
-                  {quizResult && <p className="mt-2.5 text-lg">{allQuizzes[currentQuiz].relevantRule}</p>}
                 </div>
                 {/* Images */}
                 <div className="flex-1 flex flex-[0_0_50%] flex-wrap items-center justify-center">
@@ -111,6 +110,12 @@
                   </div>
                 }
                 </div>
+                {
+                  quizResult && allQuizzes[currentQuiz].relevantRule != " " && <div className="md:col-span-2 mt-4">
+                    <p className="text-xl mb-2.5">Relevant Rule:</p>
+                    <p className="whitespace-pre-wrap">{allQuizzes[currentQuiz].relevantRule}</p>
+                  </div>
+                }
               </div>
             }
           </div>
