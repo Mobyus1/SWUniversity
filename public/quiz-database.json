@@ -312,5 +312,19 @@
       "relevantCards": ["SOR/141", "JTL/135", "JTL/096"],
       "relevantRule": "When Blue Leader moves to the ground arena as a result of its ability, it becomes a ground unit, even if it still says \"Space Unit\" at the top of the card. Also, a unit enters play before its own When Played ability resolves, so Special Forces TIE Fighter absolutely does count itself.",
       "tags": ["special forces tie fighter", "blue leader", "green squadron a-wing", "when played"]
+   },
+   {
+      "id": 19,
+      "question": "Player A has Black One, Straight at Them, with R2-D2, Artooooooooo, attached to it as a Pilot in play. They also have 4 total resources, all readied. They want to pay 1 resource and use their readied Poe Dameron, I Can Fly Anything, leader's ability to attach Poe to their Black One. Is this a legal play and why/why not?",
+      "choices": {
+        "a": "Yes. R2-D2 says that you may play or deploy one additional Pilot on the attached vehicle, so Poe can deploy onto it.",
+        "b": "Yes, but Player A will need to defeat R2-D2 in order to make room for Poe.",
+        "c": "No. Poe needs at least 5 resources to use his leader ability.", 
+        "d": "No. Poe's ability does not play or deploy him, so R2-D2's text does not override his restriction of the target vehicle already having a Pilot on it.",
+      },
+      "answer": "d",
+      "relevantCards": ["JTL/147", "JTL/245", "JTL/013"],
+      "relevantRule": "Due to Poe's wording, he is neither \"played\" nor \"deployed\" but rather \"attaches\" himself to a friendly Vehicle unit without a Pilot on it. Since R2-D2 specifically mentions those two methods of attaching, you cannot attach Poe to a Vehicle with R2-D2 (or any Pilot for that matter!) already attached.",
+      "tags": ["poe dameron", "r2-d2", "black one", "pilot", "ability", "restriction", "leader", "upgrade", "wording"]
    }
 ]
