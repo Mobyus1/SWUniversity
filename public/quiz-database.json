@@ -309,7 +309,7 @@
         "d": "No, Player B controls more space units than player A."
       },
       "answer": "c",
-      "relevantCards": ["SOR/141", "JTL/135", "JTL/096"],
+      "relevantCards": ["SOR/141", "JTL/096", "JTL/135"],
       "relevantRule": "When Blue Leader moves to the ground arena as a result of its ability, it becomes a ground unit, even if it still says \"Space Unit\" at the top of the card. Also, a unit enters play before its own When Played ability resolves, so Special Forces TIE Fighter absolutely does count itself.",
       "tags": ["special forces tie fighter", "blue leader", "green squadron a-wing", "when played"]
    },
