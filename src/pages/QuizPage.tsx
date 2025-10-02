@@ -112,7 +112,7 @@
                 </div>
                 {
                   quizResult && allQuizzes[currentQuiz].relevantRule != " " && <div className="md:col-span-2 mt-4">
-                    <p className="text-xl mb-2.5">Relevant Rule:</p>
+                    <p className="text-xl mb-2.5">Relevant Rules:</p>
                     <p className="whitespace-pre-wrap">{allQuizzes[currentQuiz].relevantRule}</p>
                   </div>
                 }
