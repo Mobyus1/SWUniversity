@@ -226,7 +226,7 @@
       },
       "answer": "c",
       "relevantCards": ["SOR/182", "SOR/177", "SHD/229"],
-      "relevantRule": "Even though Bossk's ability triggers as soon as Ma Klounkee is played, it waits to resolve until after the Event has finished resolving, even if Bossk is no longer in play.\n3.3.6 - If a triggered ability has the triggering condition \"When you play an event,\" the event ability must be resolved as completely as possible before resolving the triggered ability.\n7.6.3 - For a triggered ability to resolve, the card with the ability must be in play when the triggering condition occurs, unless the ability specifies that it can be triggered from an out-of-play zone. Additionally, the triggered ability must resolve once triggered, even if the card with the ability leaves play before the triggered ability resolves.\n7.6.8 - If an ability triggers during or as the result of a non-attack action, resolve that ability at the next available opportunity after that action is fully completed. If an ability triggers during an attack, resolve that ability at the appropriate timing point within that attack. Resolving a triggered ability never interrupts an action or ability that is currently resolving (other than the specified timing points during an attack), unless the currently resolving action or ability uses \"after,\" as described below. See 6.3. Attack With a Unit",
+      "relevantRule": "Even though Bossk's ability triggers as soon as Ma Klounkee is played, it waits to resolve until after the Event has finished resolving, even if Bossk is no longer in play.\n\n3.3.6 - If a triggered ability has the triggering condition \"When you play an event,\" the event ability must be resolved as completely as possible before resolving the triggered ability.\n\n7.6.3 - For a triggered ability to resolve, the card with the ability must be in play when the triggering condition occurs, unless the ability specifies that it can be triggered from an out-of-play zone. Additionally, the triggered ability must resolve once triggered, even if the card with the ability leaves play before the triggered ability resolves.\n\n7.6.8 - If an ability triggers during or as the result of a non-attack action, resolve that ability at the next available opportunity after that action is fully completed. If an ability triggers during an attack, resolve that ability at the appropriate timing point within that attack. Resolving a triggered ability never interrupts an action or ability that is currently resolving (other than the specified timing points during an attack), unless the currently resolving action or ability uses \"after,\" as described below. See 6.3. Attack With a Unit",
       "tags": ["bossk", "bib fortuna", "ma klounkee", "shield token", "trigger", "shielded", "event", "bounce", "abilities"]
    },
    {
@@ -298,5 +298,19 @@
       "relevantCards": ["JTL/009-portrait", "JTL/237", "SOR/184"],
       "relevantRule": "Italicized reminder text on cards has no impact on game rules and can be wholly ignored when reading a card's effect. In the case of Fett's Firespray, so long as the player controls any Boba Fett in any form, it can ready as a result of its When Played ability. ",
       "tags": ["fett's firespray", "boba fett", "readying", "when played", "pilot", "control"]
+   },
+   {
+      "id": 18,
+      "question": "Player A has a Green Squadron A-Wing, a Blue Leader that was moved to the ground arena as a result of its When Played ability, and no other units. Player B plays a Special Forces TIE Fighter. Does it ready?",
+      "choices": {
+        "a": "Yes. Player A controls two space units and Player B now only controls one.",
+        "b": "Yes. Player A only controls one space unit, and Special Forces TIE Fighter doesn't count itself when it resolves its ability.", 
+        "c": "No, both players now control one space unit.",
+        "d": "No, Player B does not control more space units than player A."
+      },
+      "answer": "c",
+      "relevantCards": ["SOR/141", "JTL/135", "JTL/096"],
+      "relevantRule": "When Blue Leader moves to the ground arena as a result of its ability, it becomes a ground unit, even if it still says "Space Unit" at the top of the card. Also, a unit enters play before its own When Played ability resolves, so Special Forces TIE Fighter absolutely does count itself.",
+      "tags": ["special forces tie fighter", "blue leader", "green squadron a-wing", "when played"]
    }
 ]
