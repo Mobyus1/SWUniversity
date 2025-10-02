@@ -306,7 +306,7 @@
         "a": "Yes. Player A controls two space units and Player B now only controls one.",
         "b": "Yes. Player A only controls one space unit, and Special Forces TIE Fighter doesn't count itself when it resolves its ability.", 
         "c": "No, both players now control one space unit.",
-        "d": "No, Player B does not control more space units than player A."
+        "d": "No, Player B controls more space units than player A."
       },
       "answer": "c",
       "relevantCards": ["SOR/141", "JTL/135", "JTL/096"],
