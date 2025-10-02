@@ -100,7 +100,7 @@
                 <div className="flex-1 flex flex-[0_0_50%] flex-wrap items-center justify-center">
                 {
                   allQuizzes[currentQuiz].relevantCards && allQuizzes[currentQuiz].relevantCards.length > 0 && <div>
-                    <div className="inline text-xl mb-2.5 mr-2">Relevant Cards:</div><u onClick={() => setShowModal(true)}>Click to Enlarge</u>
+                    <div className="inline text-xl mb-2.5 mr-2">Relevant Cards:</div><u onClick={() => setShowModal(true)}>Click here to see enlarged images</u>
                     <div className="flex flex-wrap justify-center">
                       {
                         allQuizzes[currentQuiz].relevantCards.map((cardName: string, index: number) => <div key={index} className="w-60 m-2.5">
