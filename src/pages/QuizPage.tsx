@@ -8,6 +8,7 @@
     const [quizzesCompleted, setQuizzesCompleted] = React.useState<number[]>([]);
     const [selectedAnswer, setSelectedAnswer] = React.useState<string>("");
     const [quizResult, setQuizResult] = React.useState<string>("");
+    const [showModal, setShowModal] = React.useState(false);
 
     React.useEffect(() => {
       getQuizDataAsync().then(data => {
@@ -20,12 +21,12 @@
       if(allQuizzes.length === 0) return null;
       const choiceKeys = Object.keys(allQuizzes[currentQuiz].choices);
       const divs = choiceKeys.map((key, index) => <div key={index} className="mb-2.5">
-          <label className="text-lg">
+          <label className="text-md md:text-lg">
             <input
               type="radio"
               name="quiz-choice"
               value={choiceKeys[index]}
-              className="mr-2.5 scale-110"
+              className="mr-2.5 md:scale-110"
               checked={selectedAnswer === choiceKeys[index]}
               onChange={() => setSelectedAnswer(choiceKeys[index])}
               disabled={quizResult !== ""}
@@ -39,16 +40,16 @@
     }
 
     return <div>
-      <h1 className="text-4xl font-bold mb-4">Endless Mode</h1>
+      <h1 className="text-2xl md:text-4xl font-bold mb-4">Endless Mode</h1>
       {
         allQuizzes.length === 0
           ? <p className="text-lg">Loading quizzes...</p>
           : <div>
             {
-                allQuizzes[currentQuiz] && <div className="grid md:grid-cols-[35%_65%] border p-8 rounded shadow-md gap-4">
+                allQuizzes[currentQuiz] && <div className="grid md:grid-cols-[40%_60%] border p-8 rounded shadow-md gap-4">
                 {/* Question and choices */}
                 <div>
-                  <p className="mb-2.5 text-xl">{allQuizzes[currentQuiz].question}</p>
+                  <p className="mb-2.5 text-lg md:text-xl">{allQuizzes[currentQuiz].question}</p>
                   <form onSubmit={(e) => {
                     e.preventDefault();
                     const form = e.target as HTMLFormElement;
@@ -99,7 +100,7 @@
                 <div className="flex-1 flex flex-[0_0_50%] flex-wrap items-center justify-center">
                 {
                   allQuizzes[currentQuiz].relevantCards && allQuizzes[currentQuiz].relevantCards.length > 0 && <div>
-                    <h3 className="text-xl mb-2.5">Relevant Cards:</h3>
+                    <div className="inline text-xl mb-2.5 mr-2">Relevant Cards:</div><u onClick={() => setShowModal(true)}>Click to Enlarge</u>
                     <div className="flex flex-wrap justify-center">
                       {
                         allQuizzes[currentQuiz].relevantCards.map((cardName: string, index: number) => <div key={index} className="w-60 m-2.5">
@@ -110,10 +111,26 @@
                   </div>
                 }
                 </div>
+                {/* Relevant rule */}
                 {
                   quizResult && allQuizzes[currentQuiz].relevantRule != " " && <div className="md:col-span-2 mt-4">
                     <p className="text-xl mb-2.5">Relevant Rules:</p>
                     <p className="whitespace-pre-wrap">{allQuizzes[currentQuiz].relevantRule}</p>
+                  </div>
+                }
+                {/*Relevant Cards Modal*/}
+                {
+                  allQuizzes[currentQuiz].relevantCards &&
+                  allQuizzes[currentQuiz].relevantCards.length > 0 &&
+                  showModal && <div className="overflow-y-scroll fixed inset-0 bg-black bg-opacity-70 flex flex-wrap" onClick={() => setShowModal(false)}>
+                    <p className="absolute top-2 md:top-4 right-4 md:right-8 text-gray-400 md:text-4xl" onClick={() => setShowModal(false)}>X</p>
+                    <div className="flex flex-wrap justify-center py-8 md:px-24">
+                    {
+                      allQuizzes[currentQuiz].relevantCards.map((cardName: string, index: number) => <div key={index} className="w-80 md:w-95 m-2.5">
+                        <img src={`https://swudb.com/cdn-cgi/image/quality=40/images/cards/${cardName}.png`} alt={`card ${cardName}`} className="max-h-full object-contain" />
+                      </div>)
+                    }
+                    </div>
                   </div>
                 }
               </div>
