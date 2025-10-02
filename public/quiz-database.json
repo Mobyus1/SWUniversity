@@ -242,5 +242,33 @@
       "relevantCards": ["SHD/172", "SHD/178"],
       "relevantRule": " ",
       "tags": ["krayt dragon", "daring raid", "trigger", "event", "play a card", "timing", "abilities"]
-   }
+   },
+   {
+      "id": 14,
+      "question": "Player A controls a Lurking TIE Phantom and a Sanctioner's Shuttle. Player B plays Caught in the Crossfire and chooses those two units. What best describes what happens?",
+      "choices": {
+        "a": "Sanctioner's Shuttle takes 2 damage. Lurking TIE takes 0 damage.",
+        "b": "Sanctioner's Shuttle takes 2 damage. Lurking TIE takes 2 damage and is defeated.", 
+        "c": "Sanctioner's Shuttle takes 4 damage and is defeated. Lurking TIE takes 0 damage.",
+        "d": "Sanctioner's Shuttle takes 4 damage and is defeated. Lurking TIE takes 2 damage and is defeated."
+      },
+      "answer": "a",
+      "relevantCards": ["SHD/187", "TWI/213", "TWI/176"],
+      "relevantRule": "While the text on Caught in the Crossfire states that the units are dealing damage to one another, since the cause of the damage is Caught in the Crossfire, it's still considered to be originating from an enemy card ability, meaning Lurking TIE still prevents the damage.",
+      "tags": ["lurking tie", "sanctioner's shuttle", "caught in the crossfire", "prevent", "event", "choose"]
+   },
+   {
+      "id": 15,
+      "question": "Player A controls Millennium Falcon, Piece of Junk, and Luke Skywalker, You Still With Me, attached to it as a Pilot. When readying cards during the Regroup Phase, Player A chooses not to pay the 1 resource for Millennium Falcon's ability, returning it to Player A's hand. What best describes what happens to Luke Skywalker?",
+      "choices": {
+        "a": "Luke Skywalker returns to Player A's hand.",
+        "b": "Luke Skywalker is discarded.", 
+        "c": "Luke Skywalker is either discarded or becomes a ground unit. If he's a ground unit, he will remain exhausted at the start of the next round.",
+        "d": "Luke Skywalker is either discarded or becomes a ground unit. If he's a ground unit, he will be ready at the start of the next round."
+      },
+      "answer": "c",
+      "relevantCards": ["SOR/193", "JTL/094"],
+      "relevantRule": "When a unit returns to hand, all upgrades attached to it are defeated, meaning Player A has the choice to make Luke a ground unit. If they do, the timing for readying cards during the Regroup Phase has already passed (that's when Millennium Falcon's ability triggered), meaning he will remain exhausted leading into the next round.",
+      "tags": ["millennium falcon", "luke skywalker", "trigger", "timing", "regroup phase", "bounce", "pilot", "ability"]
+    }
 ]
