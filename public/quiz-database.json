@@ -320,7 +320,7 @@
         "a": "Yes. R2-D2 says that you may play or deploy one additional Pilot on the attached vehicle, so Poe can deploy onto it.",
         "b": "Yes, but Player A will need to defeat R2-D2 in order to make room for Poe.",
         "c": "No. Poe needs at least 5 resources to use his leader ability.", 
-        "d": "No. Poe's ability does not play or deploy him, so R2-D2's text does not override his restriction of the target vehicle already having a Pilot on it.",
+        "d": "No. Poe's ability does not play or deploy him, so R2-D2's text does not override his restriction of the target vehicle already having a Pilot on it."
       },
       "answer": "d",
       "relevantCards": ["JTL/147", "JTL/245", "JTL/013"],
