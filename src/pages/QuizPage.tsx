@@ -103,7 +103,7 @@
                     <div className="inline text-xl mb-2.5 mr-2">Relevant Cards:</div><u onClick={() => setShowModal(true)}>(Click here to see enlarged images)</u>
                     <div className="flex flex-wrap justify-center">
                       {
-                        allQuizzes[currentQuiz].relevantCards.map((cardName: string, index: number) => <div key={index} className="w-60 m-2.5">
+                        allQuizzes[currentQuiz].relevantCards.map((cardName: string, index: number) => <div key={index} className="w-fit h-72 m-2.5">
                           <img src={`https://swudb.com/cdn-cgi/image/quality=40/images/cards/${cardName}.png`} alt={`card ${cardName}`} className="max-h-full object-contain" />
                         </div>)
                       }
@@ -126,7 +126,7 @@
                     <p className="absolute top-2 md:top-4 right-4 md:right-8 text-gray-400 md:text-4xl" onClick={() => setShowModal(false)}>X</p>
                     <div className="flex flex-wrap justify-center py-8 md:px-24">
                     {
-                      allQuizzes[currentQuiz].relevantCards.map((cardName: string, index: number) => <div key={index} className="w-80 md:w-95 m-2.5">
+                      allQuizzes[currentQuiz].relevantCards.map((cardName: string, index: number) => <div key={index} className="w-fit h-100 md:h-120 m-2.5">
                         <img src={`https://swudb.com/cdn-cgi/image/quality=40/images/cards/${cardName}.png`} alt={`card ${cardName}`} className="max-h-full object-contain" />
                       </div>)
                     }
