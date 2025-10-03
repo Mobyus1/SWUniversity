@@ -5,8 +5,8 @@ function Layout({ children }: { children: React.ReactNode }) {
       <div className="relative navbar z-10">
         <div className="flex gap-4">
           <a className="btn btn-ghost text-xl" href="#/">Home</a>
-          <a className="btn btn-ghost text-xl" href="#/quiz">Marathon Mode</a>
-          {/* <a className="btn btn-ghost text-xl" href="#/puzzles">Puzzles</a> */}
+          <a className="btn btn-ghost text-xl" href="#/quiz">Quiz</a>
+          {/* <a className="btn btn-ghost text-xl" href="#/puzzles">Puzzle</a> */}
         </div>
       </div>
       <div className="relative p-4 z-10">
