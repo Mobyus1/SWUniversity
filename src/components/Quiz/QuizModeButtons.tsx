@@ -14,7 +14,7 @@ export function QuizModeButtons({setQuizMode, setCurrentQuizSet, setCurrentQuizI
     <div className={`${globalBackgroundStyle} border p-4 rounded flex flex-col items-center justify-center flex-1`}>
       <h3 className="text-xl mb-4">DESCRIPTION TEXT</h3>
       <button
-        className="btn btn-primary text-lg p-4 w-1/2"
+        className="btn btn-primary text-lg py-8 lg:py-5 w-1/2"
         onClick={() => {
           setQuizMode("marathon");
           const filteredSet = allQuizzes.filter(quiz => marathonSet.includes(quiz.id));
@@ -29,7 +29,7 @@ export function QuizModeButtons({setQuizMode, setCurrentQuizSet, setCurrentQuizI
     <div className={`${globalBackgroundStyle} border p-4 rounded flex flex-col items-center justify-center flex-1`}>
       <h3 className="text-xl mb-4">DESCRIPTION TEXT</h3>
       <button
-        className="btn btn-primary text-lg p-4 w-1/2"
+        className="btn btn-primary text-lg py-8 lg:py-5 w-1/2"
         onClick={() => {
           setQuizMode("endless");
           setCurrentQuizSet(allQuizzes);
