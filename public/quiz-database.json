@@ -1,31 +1,31 @@
 [
   {
-      "id": 1,
-      "question": "Player A has the initiative and a Baze Malbus, Temple Guardian, in play. Player B plays a SpecForce Soldier and targets Baze Malbus, causing it to lose Sentinel for the phase. Later in the same phase, Player A plays Protector and attaches it to their Baze Malbus. What best describes what happens?",
-      "choices": {
+     "id": 1,
+     "question": "Player A has the initiative and a Baze Malbus, Temple Guardian, in play. Player B plays a SpecForce Soldier and targets Baze Malbus, causing it to lose Sentinel for the phase. Later in the same phase, Player A plays Protector and attaches it to their Baze Malbus. What best describes what happens?",
+     "choices": {
         "a": "Protector gives Baze Malbus both +1/+1 and Sentinel immediately.",
         "b": "Protector gives Baze +1/+1 immediately, but he cannot regain Sentinel until the end of the phase.",
         "c": "Protector waits until the end of the phase to give Baze both +1/+1 and Sentinel.",
         "d": "Protector cannot be attached to Baze."
-      },
-      "answer": "b",
-      "relevantCards": ["SOR/065", "SOR/140", "SOR/057"],
-      "relevantRule": "If an effect causes a unit to lose an ability or keyword for a specific duration of time, that unit is not able to regain that particular ability or keyword until the specified period has ended.\n\n8.15.1 - If an ability causes a unit to \"lose\" a keyword, the unit ceases to have the specified keyword and any abilities granting it that keyword when the \"lose\" effect is resolved cease granting the keyword for the duration of the \"lose\" effect. The unit cannot regain that keyword for the duration of the effect.",
-      "tags": ["baze malbus","specforce soldier","protector","sentinel","abilities","losing abilities","upgrade"]
+     },
+     "answer": "b",
+     "relevantCards": ["SOR/065", "SOR/140", "SOR/057"],
+     "relevantRule": "If an effect causes a unit to lose an ability or keyword for a specific duration of time, that unit is not able to regain that particular ability or keyword until the specified period has ended.\n\n8.15.1 - If an ability causes a unit to \"lose\" a keyword, the unit ceases to have the specified keyword and any abilities granting it that keyword when the \"lose\" effect is resolved cease granting the keyword for the duration of the \"lose\" effect. The unit cannot regain that keyword for the duration of the effect.",
+     "tags": ["baze malbus","specforce soldier","protector","sentinel","abilities","losing abilities","upgrade"]
   },
   {
-    "id": 2,
-    "question": "Player A plays Mon Mothma, Voice of the Rebellion. Among the searched cards, they find a SpecForce Soldier. Do they have to draw it?",
-    "choices": {
-      "a": "Yes. SpecForce Soldier is a Rebel card so it must be drawn.",
-      "b": "No. SpecForce Soldier is not a Rebel card, so it is not a valid choice.",
-      "c": "Yes. SpecForce Soldier has a When Played ability so it must be drawn.",
-      "d": "No. It is possible to fail to find a card from a hidden zone, even if one exists."
-    },
-    "answer": "d",
-    "relevantCards": ["SOR/096", "SOR/140"],
-    "relevantRule": "When an ability instructs a player to select something from a hidden zone, such as their hand, resources, or a portion of their deck, since that information is unknown to their opponents, the player is permitted to act as if the contents of the hidden zone do not contain the intended target. This would not be the case, however, if the player was instructed to \"reveal\" a portion of their deck instead.\n\n1.3.2 - While resolving a card ability, resolve as much of the ability as possible, and ignore any parts of the ability that cannot be resolved. (Note that you may choose to resolve abilities involving hidden information as though you have fewer options than you really do.)\n\n8.27.1 - When an ability instructs a player to \"search\" a deck, that player looks at a number of cards from that deck to find one or more cards, often with a specified attribute. The player chooses one or more cards (as indicated by the ability) and returns the other cards to that deck as specified below. The ability then instructs the player on what to do with the card(s) they have chosen. The player may also choose to resolve the ability as though no appropriate card was found.",
-    "tags": ["mon mothma", "search", "hidden zone", "draw", "reveal", "when played", "rebel"]
+     "id": 2,
+     "question": "Player A plays Mon Mothma, Voice of the Rebellion. Among the searched cards, they find a SpecForce Soldier. Do they have to draw it?",
+     "choices": {
+       "a": "Yes. SpecForce Soldier is a Rebel card so it must be drawn.",
+       "b": "No. SpecForce Soldier is not a Rebel card, so it is not a valid choice.",
+       "c": "Yes. SpecForce Soldier has a When Played ability so it must be drawn.",
+       "d": "No. It is possible to fail to find a card from a hidden zone, even if one exists."
+     },
+     "answer": "d",
+     "relevantCards": ["SOR/096", "SOR/140"],
+     "relevantRule": "When an ability instructs a player to select something from a hidden zone, such as their hand, resources, or a portion of their deck, since that information is unknown to their opponents, the player is permitted to act as if the contents of the hidden zone do not contain the intended target. This would not be the case, however, if the player was instructed to \"reveal\" a portion of their deck instead.\n\n1.3.2 - While resolving a card ability, resolve as much of the ability as possible, and ignore any parts of the ability that cannot be resolved. (Note that you may choose to resolve abilities involving hidden information as though you have fewer options than you really do.) \n\n8.27.1 - When an ability instructs a player to \"search\" a deck, that player looks at a number of cards from that deck to find one or more cards, often with a specified attribute. The player chooses one or more cards (as indicated by the ability) and returns the other cards to that deck as specified below. The ability then instructs the player on what to do with the card(s) they have chosen. The player may also choose to resolve the ability as though no appropriate card was found.",
+     "tags": ["mon mothma", "search", "hidden zone", "draw", "reveal", "when played", "rebel"]
   },
   {
     "id": 3,
