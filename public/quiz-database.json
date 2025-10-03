@@ -10,7 +10,7 @@
       },
       "answer": "b",
       "relevantCards": ["SOR/065", "SOR/140", "SOR/057"],
-      "relevantRule": " ",
+      "relevantRule": "If an effect causes a unit to lose an ability or keyword for a specific duration of time, that unit is not able to regain that particular ability or keyword until the specified period has ended.\n\n8.15.1 - If an ability causes a unit to \"lose\" a keyword, the unit ceases to have the specified keyword and any abilities granting it that keyword when the \"lose\" effect is resolved cease granting the keyword for the duration of the \"lose\" effect. The unit cannot regain that keyword for the duration of the effect.",
       "tags": ["baze malbus","specforce soldier","protector","sentinel","abilities","losing abilities","upgrade"]
   },
   {
@@ -27,7 +27,7 @@
       "SOR/096",
       "SOR/140"
     ],
-    "relevantRule": " ",
+    "relevantRule": "When an ability instructs a player to select something from a hidden zone, such as their hand, resources, or a portion of their deck, since that information is unknown to their opponents, the player is permitted to act as if the contents of the hidden zone do not contain the intended target. This would not be the case, however, if the player was instructed to \"reveal\" a portion of their deck instead.\n\n1.3.2 - While resolving a card ability, resolve as much of the ability as possible, and ignore any parts of the ability that cannot be resolved. (Note that you may choose to resolve abilities involving hidden information as though you have fewer options than you really do.)\n\n8.27.1 - When an ability instructs a player to \"search\" a deck, that player looks at a number of cards from that deck to find one or more cards, often with a specified attribute. The player chooses one or more cards (as indicated by the ability) and returns the other cards to that deck as specified below. The ability then instructs the player on what to do with the card(s) they have chosen. The player may also choose to resolve the ability as though no appropriate card was found.",
     "tags": [
       "mon mothma",
       "search",
@@ -53,7 +53,7 @@
       "SHD/195",
       "SHD/206"
     ],
-    "relevantRule": " ",
+    "relevantRule": "Since Spare the Target does not specify \"If you do...\", collecting the target's Bounties happens whether the unit is returned to hand or not.\n\n1.3.2 - While resolving a card ability, resolve as much of the ability as possible, and ignore any parts of the ability that cannot be resolved. (Note that you may choose to resolve abilities involving hidden information as though you have fewer options than you really do.)",
     "tags": [
       "chewbacca",
       "bounty",
