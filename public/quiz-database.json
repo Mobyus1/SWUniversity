@@ -177,15 +177,18 @@
       "tags": ["grogu", "exhaust", "action ability"]
   },
   {
-      "id": 9,
-      "question": "Player A has The Force and plays Yoda's Lightsaber, attaching it to a friendly Ion Cannon. They resolve the When Played ability on Yoda's Lightsaber, spending their Force Token and healing their base for 3. Is this play legal?",
-      "choices": {
-        "a": "Yes, but it's ridiculous."
-      },
-      "answer": "a",
-      "relevantCards": ["LOF/102", "IBH/016"],
-      "relevantRule": " ",
-      "tags": ["yoda's lightsaber", "the force", "when played", "upgrade", "attach", "weapon", "lightsaber", "abilities"]
+     "id": 9,
+     "question": "Player A has zero cards remaining in their deck. They attack with Reinforcement Walker. What best describes what happens?",
+     "choices": {
+        "a": "Reinforcement Walker's ability causes Player A's base to take 3 damage by attempting to look at a card from an empty deck.",
+        "b": "Reinforcement Walker's ability heals Player A's base for 3 HP.",
+        "c": "Reinforcement Walker's ability does nothing.",
+        "d": "Reinforcement Walker's ability causes Player A's base to take 3 damage by attempting to look at a card from an empty deck initially, but then heals it for 3 HP since Player A was not able to draw the non-existent card."
+     },
+     "answer": "c",
+     "relevantCards": ["SOR/119"],
+     "relevantRule": "Only attempting the specific act of drawing a card from an empty deck results in taking 3 damage to base. Other effects, such as looking at, revealing, searching, discarding, etc... all do not. In the case of Reinforcement Walker, the ability attempts to look at a card that does not exist, so the ability simply does nothing.",
+     "tags": ["reinforcement walker", "draw", "abilities", "on attack", "empty deck"]
   },
   {
       "id": 10,
