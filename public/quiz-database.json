@@ -329,5 +329,19 @@
       "relevantCards": ["JTL/147", "JTL/245", "JTL/013"],
       "relevantRule": "Due to Poe's wording, he is neither \"played\" nor \"deployed\" but rather \"attaches\" himself to a friendly Vehicle unit without a Pilot on it. Since R2-D2 specifically mentions those two methods of attaching, you cannot attach Poe to a Vehicle with R2-D2 (or any Pilot for that matter!) already attached.",
       "tags": ["poe dameron", "r2-d2", "black one", "pilot", "ability", "restriction", "leader", "upgrade", "wording"]
+   },
+   {
+      "id": 20,
+      "question": "Player A controls Chirrut Imwe, One With the Force with 3 damage on him. Player B attacks into Chirrut with a First Legion Snowtrooper. What best describes what happens?",
+      "choices": {
+         "a": "Chirrut takes 4 damage and Player A's base takes 0.",
+         "b": "Chirrut takes 2 damage and Player A's base takes 0.",
+         "c": "Chirrut takes 4 damage and Player A's base takes 2.",
+         "d": "Chirrut takes 2 damage and Player A's base takes 2."
+      },
+      "answer": "a",
+      "relevantCards": ["SOR/004-portrait", "SOR/130"],
+      "relevantRule": "Since Chirrut's ability prevents him from being defeated during the Action Phase no matter how much damage he takes, no Overwhelm damage may be done to the base.\n\n7.5.7.F. - If an attacker with Overwhelm does not defeat the defender while attacking, no damage is dealt to the enemy base.",
+      "tags": ["chirrut", "first legion snowtrooper", "abilities", "overwhelm", "leader", "damaged unit", "on attack"]
    }
 ]
