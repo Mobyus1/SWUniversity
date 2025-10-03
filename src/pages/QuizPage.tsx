@@ -54,7 +54,18 @@
           ? <p className="text-lg">Loading quizzes...</p>
           : <div>
             {
-                allQuizzes[currentQuizId] && <div className="grid md:grid-cols-[40%_60%] border p-8 rounded shadow-md gap-4">
+              quizzesCompleted.length === allQuizzes.length && <div className="text-center mt-64">
+                <p className="text-2xl md:text-4xl font-bold mb-4">You've correctly answered every question!</p>
+                <button className="btn btn-primary text-lg p-4" onClick={() => {
+                  setQuizzesCompleted([]);
+                  setCurrentQuizId(Math.floor(Math.random() * allQuizzes.length));
+                  setQuizResult("");
+                  setSelectedAnswer("");
+                }}>Restart Quizzes</button>
+              </div>
+            }
+            {
+                quizzesCompleted.length < allQuizzes.length && allQuizzes[currentQuizId] && <div className="grid md:grid-cols-[40%_60%] border p-8 rounded shadow-md gap-4">
                 {/* Question and choices */}
                 <div>
                   <p className="mb-2.5 text-lg md:text-xl">{allQuizzes[currentQuizId].question}</p>
@@ -68,31 +79,9 @@
                   {!quizResult && <button type="submit" className="btn btn-primary mt-4 text-lg p-4">Submit Answer</button>}
                   {
                     quizResult && quizzesCompleted.length < allQuizzes.length
-                      ? <button className="btn btn-secondary mt-4 text-lg p-4" onClick={() => {
-                          if(selectedAnswer === allQuizzes[currentQuizId].answer.toString()) {
-                            const updatedCompleted = [...quizzesCompleted, currentQuizId];
-                            setQuizzesCompleted(updatedCompleted);
-                            if(updatedCompleted.length === allQuizzes.length) {
-                              alert("You've correctly answered every question!");
-                            } else {
-                              let nextQuiz = currentQuizId;
-                              while(updatedCompleted.includes(nextQuiz)) {
-                                nextQuiz = Math.floor(Math.random() * allQuizzes.length);
-                              }
-                              setCurrentQuizId(nextQuiz);
-                              setQuizResult("");
-                              setSelectedAnswer("");
-                            }
-                          } else {
-                            let nextQuiz = Math.floor(Math.random() * allQuizzes.length);
-                            while(quizzesCompleted.includes(nextQuiz)) {
-                                nextQuiz = Math.floor(Math.random() * allQuizzes.length);
-                            }
-                            setCurrentQuizId(nextQuiz);
-                            setQuizResult("");
-                            setSelectedAnswer("");
-                          }
-                        }}>
+                      ? <button className="btn btn-secondary mt-4 text-lg p-4" onClick={() =>
+                            onNextQuestion(selectedAnswer, currentQuizId, allQuizzes[currentQuizId].answer.toString(), allQuizzes, quizzesCompleted,
+                              setQuizzesCompleted, setCurrentQuizId, setQuizResult, setSelectedAnswer)}>
                           Next Question
                         </button>
                       : null
@@ -157,6 +146,39 @@
     ) {
     if (selectedIndex) {
       setQuizResult(selectedIndex === allQuizzes[currentQuiz].answer ? "correct" : "incorrect");
+    }
+  }
+
+  function onNextQuestion(selectedAnswer: string,
+    currentQuizId: number,
+    currentQuizAnswer: string,
+    allQuizzes: Quiz[],
+    quizzesCompleted: number[],
+    setQuizzesCompleted: (completed: number[]) => void,
+    setCurrentQuizId: (id: number) => void,
+    setQuizResult: (result: string) => void,
+    setSelectedAnswer: (answer: string) => void
+  ) {
+    if(selectedAnswer === currentQuizAnswer) {
+      const updatedCompleted = [...quizzesCompleted, currentQuizId];
+      setQuizzesCompleted(updatedCompleted);
+      if(updatedCompleted.length !== allQuizzes.length) {
+        let nextQuiz = currentQuizId;
+        while(updatedCompleted.includes(nextQuiz)) {
+          nextQuiz = Math.floor(Math.random() * allQuizzes.length);
+        }
+        setCurrentQuizId(nextQuiz);
+        setQuizResult("");
+        setSelectedAnswer("");
+      }
+    } else {
+      let nextQuiz = Math.floor(Math.random() * allQuizzes.length);
+      while(quizzesCompleted.includes(nextQuiz)) {
+          nextQuiz = Math.floor(Math.random() * allQuizzes.length);
+      }
+      setCurrentQuizId(nextQuiz);
+      setQuizResult("");
+      setSelectedAnswer("");
     }
   }
 
