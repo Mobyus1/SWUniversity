@@ -1,241 +1,78 @@
-  import React from "react";
-  import { getQuizDataAsync } from "../util/func";
-  import type { Quiz } from "../util/func";
+import React from "react";
+import { getQuizDataAsync } from "../util/func";
+import type { Quiz } from "../util/func";
+import { QuizModeButtons } from "../components/Quiz/QuizModeButtons";
+import { QuizContent } from "../components/Quiz/QuizContent";
+import type { QuizModes } from "../util/const";
 
-  type QuizModes = "" | "marathon" | "endless";
-  const marathonSet: number[] = [];
-  const endlessThreshold = 10;
+const marathonSet: number[] = [
+  //TODO: fill with specific quiz IDs when we have a lot more
+];
 
-  function QuizPage() {
-    const [allQuizzes, setAllQuizzes] = React.useState<Quiz[]>([]);
-    const [currentQuizSet, setCurrentQuizSet] = React.useState<Quiz[]>(allQuizzes);
-    const [quizMode, setQuizMode] = React.useState<QuizModes>("");
-    const [currentQuizId, setCurrentQuizId] = React.useState(0);
-    const [currentQuizKeys, setCurrentQuizKeys] = React.useState<string[]>([]);
-    const [quizzesCompleted, setQuizzesCompleted] = React.useState<number[]>([]);
-    const [lastEndlessQuizzes, setLastEndlessQuizzes] = React.useState<number[]>([]);
-    const [selectedAnswer, setSelectedAnswer] = React.useState<string>("");
-    const [quizResult, setQuizResult] = React.useState<string>("");
-    const [showModal, setShowModal] = React.useState(false);
+function QuizPage() {
+  const [allQuizzes, setAllQuizzes] = React.useState<Quiz[]>([]);
+  const [currentQuizSet, setCurrentQuizSet] = React.useState<Quiz[]>(allQuizzes);
+  const [quizMode, setQuizMode] = React.useState<QuizModes>("");
+  const [currentQuizId, setCurrentQuizId] = React.useState(0);
+  const [currentQuizKeys, setCurrentQuizKeys] = React.useState<string[]>([]);
+  const [quizzesCompleted, setQuizzesCompleted] = React.useState<number[]>([]);
+  const [lastEndlessQuizzes, setLastEndlessQuizzes] = React.useState<number[]>([]);
+  const [selectedAnswer, setSelectedAnswer] = React.useState<string>("");
+  const [quizResult, setQuizResult] = React.useState<boolean>(false);
 
-    React.useEffect(() => {
-      getQuizDataAsync().then(data => {
-        setAllQuizzes(data);
-        setCurrentQuizId(Math.floor(Math.random() * data.length));
-        marathonSet.push(...data.map(quiz => quiz.id));//identical to all quizzes for now
-      });
-    }, []);
+  React.useEffect(() => {
+    getQuizDataAsync().then(data => {
+      setAllQuizzes(data);
+      marathonSet.push(...data.map(quiz => quiz.id));//identical to all quizzes for now
+    });
+  }, []);
 
-    const renderChoices = () => {
-      if(allQuizzes.length === 0) return null;
-      if(!currentQuizKeys || currentQuizKeys.length === 0) {
-        const choiceKeys = Object.keys(allQuizzes[currentQuizId].choices);
-        for (let i = choiceKeys.length - 1; i > 0; i--) {
-          const j = Math.floor(Math.random() * (i + 1));
-          [choiceKeys[i], choiceKeys[j]] = [choiceKeys[j], choiceKeys[i]];
-        }
-        setCurrentQuizKeys(choiceKeys);
-      }
-      const divs = currentQuizKeys.map((_, index) => <div key={index} className="mb-2.5">
-          <label className="text-md md:text-lg">
-            <input
-              type="radio"
-              name="quiz-choice"
-              value={currentQuizKeys[index]}
-              className="mr-2.5 md:scale-110"
-              checked={selectedAnswer === currentQuizKeys[index]}
-              onChange={() => setSelectedAnswer(currentQuizKeys[index])}
-              disabled={quizResult !== ""}
-            />
-            {allQuizzes[currentQuizId].choices[currentQuizKeys[index]]}
-          </label>
-        </div>
-      );
+  const renderQuizContent = () => currentQuizSet.length === 0
+    ? <p className="text-lg">Loading quizzes...</p>
+    : <QuizContent
+        currentQuizSet={currentQuizSet}
+        currentQuizId={currentQuizId}
+        quizMode={quizMode}
+        allQuizzes={allQuizzes}
+        quizzesCompleted={quizzesCompleted}
+        lastEndlessQuizzes={lastEndlessQuizzes}
+        quizResult={quizResult}
+        selectedAnswer={selectedAnswer}
+        currentQuizKeys={currentQuizKeys}
+        setCurrentQuizId={setCurrentQuizId}
+        setQuizResult={setQuizResult}
+        setSelectedAnswer={setSelectedAnswer}
+        setQuizzesCompleted={setQuizzesCompleted}
+        setCurrentQuizKeys={setCurrentQuizKeys}
+        setLastEndlessQuizzes={setLastEndlessQuizzes}
+        setQuizMode={setQuizMode}
+      />
 
-      return divs;
+  return <div>
+    <h1 className="text-2xl md:text-4xl font-bold mb-4">{getQuizModeTitle(quizMode)}</h1>
+    {
+      quizMode === ""
+        ? <QuizModeButtons
+          setQuizMode={setQuizMode}
+          setCurrentQuizSet={setCurrentQuizSet}
+          setCurrentQuizId={setCurrentQuizId}
+          allQuizzes={allQuizzes}
+          marathonSet={marathonSet}
+        />
+        : renderQuizContent()
     }
+  </div>;
+}
 
-    const renderQuizContent = () => currentQuizSet.length === 0
-      ? <p className="text-lg">Loading quizzes...</p>
-      : <div>
-        {
-          quizzesCompleted.length === currentQuizSet.length && <div className="text-center mt-64">
-            <p className="text-2xl md:text-4xl font-bold mb-4">You've correctly answered every question!</p>
-            <button className="btn btn-primary text-lg p-4" onClick={() => {
-              setQuizzesCompleted([]);
-              setCurrentQuizId(Math.floor(Math.random() * currentQuizSet.length));
-              setQuizResult("");
-              setSelectedAnswer("");
-              setQuizMode("");
-            }}>Go Back to Quiz Menu</button>
-          </div>
-        }
-        {
-            quizzesCompleted.length < currentQuizSet.length && currentQuizSet[currentQuizId] && <div className="grid md:grid-cols-[40%_60%] border p-8 rounded shadow-md gap-4">
-            {/* Question and choices */}
-            <div>
-              <p className="mb-2.5 text-lg md:text-xl">{currentQuizSet[currentQuizId].question}</p>
-              <form onSubmit={(e) => {
-                e.preventDefault();
-                const form = e.target as HTMLFormElement;
-                const quizChoice = form.elements.namedItem('quiz-choice') as HTMLInputElement;
-                onSubmitAnswer(quizChoice.value, currentQuizSet, currentQuizId, setQuizResult);
-              }}>
-              {renderChoices()}
-              {!quizResult && <button type="submit" className="btn btn-primary mt-4 text-lg p-4">Submit Answer</button>}
-              {
-                quizResult && quizzesCompleted.length < currentQuizSet.length
-                  ? <button className="btn btn-secondary mt-4 text-lg p-4" onClick={() =>
-                        onNextQuestion(quizMode, selectedAnswer, currentQuizId, currentQuizSet[currentQuizId].answer.toString(),
-                          currentQuizSet, quizzesCompleted, lastEndlessQuizzes,
-                          setQuizzesCompleted, setCurrentQuizId, setQuizResult, setSelectedAnswer, setLastEndlessQuizzes)}>
-                      Next Question
-                    </button>
-                  : null
-              }
-              </form>
-              {
-                quizResult && <p className={`mt-10 font-bold text-xl ${quizResult === "correct" ? "text-green-500" : "text-red-600"}`}>
-                  {quizResult === "correct" ? "Correct!" : "Incorrect!"}
-                </p>
-              }
-            </div>
-            {/* Images */}
-            <div className="flex-1 flex flex-[0_0_50%] flex-wrap items-center justify-center">
-            {
-              allQuizzes[currentQuizId].relevantCards && allQuizzes[currentQuizId].relevantCards.length > 0 && <div>
-                <div className="text-xl mb-2.5 mr-2">Relevant Cards</div>
-                <div className="text-sm"><u onClick={() => setShowModal(true)}>(Click here to see enlarged images)</u></div>
-                <div className="flex flex-wrap justify-center">
-                  {
-                    allQuizzes[currentQuizId].relevantCards.map((cardName: string, index: number) => <div key={index} className="w-fit h-72 m-2.5">
-                      <img src={`https://swudb.com/cdn-cgi/image/quality=40/images/cards/${cardName}.png`} alt={`card ${cardName}`} className="max-h-full object-contain" />
-                    </div>)
-                  }
-                </div>
-              </div>
-            }
-            </div>
-            {/* Relevant rule */}
-            {
-              quizResult && allQuizzes[currentQuizId].relevantRule != " " && <div className="md:col-span-2 mt-4">
-                <p className="text-xl mb-2.5">Relevant Rules:</p>
-                <p className="whitespace-pre-wrap">{allQuizzes[currentQuizId].relevantRule}</p>
-              </div>
-            }
-            {/*Relevant Cards Modal*/}
-            {
-              allQuizzes[currentQuizId].relevantCards &&
-              allQuizzes[currentQuizId].relevantCards.length > 0 &&
-              showModal && <div className="overflow-y-scroll fixed inset-0 bg-black bg-opacity-70 flex flex-wrap" onClick={() => setShowModal(false)}>
-                <p className="absolute top-2 md:top-4 right-4 md:right-8 text-gray-400 md:text-4xl" onClick={() => setShowModal(false)}>X</p>
-                <div className="flex flex-wrap justify-center py-8 md:px-24">
-                {
-                  allQuizzes[currentQuizId].relevantCards.map((cardName: string, index: number) => <div key={index} className="w-fit h-100 md:h-120 m-2.5">
-                    <img src={`https://swudb.com/cdn-cgi/image/quality=40/images/cards/${cardName}.png`} alt={`card ${cardName}`} className="max-h-full object-contain" />
-                  </div>)
-                }
-                </div>
-              </div>
-            }
-          </div>
-        }
-      </div>
-
-    return <div>
-      <h1 className="text-2xl md:text-4xl font-bold mb-4">{getQuizModeTitle(quizMode)}</h1>
-      {
-        quizMode === "" && <div className="flex flex-col md:flex-row gap-4 mb-8">
-          <button className="btn btn-primary text-lg p-4 flex-1" onClick={() => {
-            setQuizMode("marathon");
-            const filteredSet = allQuizzes.filter(quiz => marathonSet.includes(quiz.id));
-            setCurrentQuizSet(filteredSet);
-            setCurrentQuizId(Math.floor(Math.random() * filteredSet.length));
-          }}>Marathon Mode</button>
-          <button className="btn btn-primary text-lg p-4 flex-1" onClick={() => {
-            setQuizMode("endless");
-            setCurrentQuizSet(allQuizzes);
-            setCurrentQuizId(Math.floor(Math.random() * allQuizzes.length));
-          }}>Endless Mode</button>
-        </div>
-      }
-      {
-        quizMode !== "" && renderQuizContent()
-      }
-    </div>;
+function getQuizModeTitle(mode: QuizModes): string {
+  switch(mode) {
+    case "marathon":
+      return "Marathon Mode";
+    case "endless":
+      return "Endless Mode";
+    default:
+      return "";
   }
+}
 
-  function onSubmitAnswer(
-      selectedIndex: string,
-      allQuizzes: Quiz[],
-      currentQuiz: number,
-      setQuizResult: (result: string) => void
-    ) {
-    if (selectedIndex) {
-      setQuizResult(selectedIndex === allQuizzes[currentQuiz].answer ? "correct" : "incorrect");
-    }
-  }
-
-  function onNextQuestion(quizMode: QuizModes,
-    selectedAnswer: string,
-    currentQuizId: number,
-    currentQuizAnswer: string,
-    allQuizzes: Quiz[],
-    quizzesCompleted: number[],
-    lastEndlessQuizzes: number[],
-    setQuizzesCompleted: (completed: number[]) => void,
-    setCurrentQuizId: (id: number) => void,
-    setQuizResult: (result: string) => void,
-    setSelectedAnswer: (answer: string) => void,
-    setLastEndlessQuizzes: (list: number[]) => void
-  ) {
-    if(selectedAnswer === currentQuizAnswer) {
-      if(quizMode === "marathon") {
-        const updatedCompleted = [...quizzesCompleted, currentQuizId];
-        setQuizzesCompleted(updatedCompleted);
-        if(updatedCompleted.length !== allQuizzes.length) {
-          let nextQuiz = currentQuizId;
-          while(updatedCompleted.includes(nextQuiz)) {
-            nextQuiz = Math.floor(Math.random() * allQuizzes.length);
-          }
-          setCurrentQuizId(nextQuiz);
-          setQuizResult("");
-          setSelectedAnswer("");
-        }
-      } else if(quizMode === "endless") {
-        const updatedLastEndless = [...lastEndlessQuizzes, currentQuizId];
-        if(updatedLastEndless.length > endlessThreshold) {
-          updatedLastEndless.shift();
-        }
-        setLastEndlessQuizzes(updatedLastEndless);
-        let nextQuiz = Math.floor(Math.random() * allQuizzes.length);
-        while(updatedLastEndless.includes(nextQuiz)) {
-            nextQuiz = Math.floor(Math.random() * allQuizzes.length);
-        }
-        setCurrentQuizId(nextQuiz);
-        setQuizResult("");
-        setSelectedAnswer("");
-      }
-    } else {
-      let nextQuiz = Math.floor(Math.random() * allQuizzes.length);
-      while(quizzesCompleted.includes(nextQuiz)) {
-          nextQuiz = Math.floor(Math.random() * allQuizzes.length);
-      }
-      setCurrentQuizId(nextQuiz);
-      setQuizResult("");
-      setSelectedAnswer("");
-    }
-  }
-
-  function getQuizModeTitle(mode: QuizModes): string {
-    switch(mode) {
-      case "marathon":
-        return "Marathon Mode";
-      case "endless":
-        return "Endless Mode";
-      default:
-        return "";
-    }
-  }
-
-  export default QuizPage;
+export default QuizPage;

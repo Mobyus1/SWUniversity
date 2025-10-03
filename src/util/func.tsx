@@ -11,7 +11,9 @@ export type Quiz = {
 }
 
 const notBeforeId = 1;
-const excludedIds: number[] = [];
+const excludedIds: number[] = [
+
+];
 
 export async function getQuizDataAsync() : Promise<Quiz[]> {
   const response = await fetch('/quiz-database.json');
