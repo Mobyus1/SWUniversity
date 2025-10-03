@@ -4,6 +4,7 @@
 
   type QuizModes = "" | "marathon" | "endless";
   const marathonSet: number[] = [];
+  const endlessThreshold = 10;
 
   function QuizPage() {
     const [allQuizzes, setAllQuizzes] = React.useState<Quiz[]>([]);
@@ -12,6 +13,7 @@
     const [currentQuizId, setCurrentQuizId] = React.useState(0);
     const [currentQuizKeys, setCurrentQuizKeys] = React.useState<string[]>([]);
     const [quizzesCompleted, setQuizzesCompleted] = React.useState<number[]>([]);
+    const [lastEndlessQuizzes, setLastEndlessQuizzes] = React.useState<number[]>([]);
     const [selectedAnswer, setSelectedAnswer] = React.useState<string>("");
     const [quizResult, setQuizResult] = React.useState<string>("");
     const [showModal, setShowModal] = React.useState(false);
@@ -64,7 +66,8 @@
               setCurrentQuizId(Math.floor(Math.random() * currentQuizSet.length));
               setQuizResult("");
               setSelectedAnswer("");
-            }}>Restart Quizzes</button>
+              setQuizMode("");
+            }}>Go Back to Quiz Menu</button>
           </div>
         }
         {
@@ -83,8 +86,9 @@
               {
                 quizResult && quizzesCompleted.length < currentQuizSet.length
                   ? <button className="btn btn-secondary mt-4 text-lg p-4" onClick={() =>
-                        onNextQuestion(quizMode, selectedAnswer, currentQuizId, currentQuizSet[currentQuizId].answer.toString(), currentQuizSet, quizzesCompleted,
-                          setQuizzesCompleted, setCurrentQuizId, setQuizResult, setSelectedAnswer)}>
+                        onNextQuestion(quizMode, selectedAnswer, currentQuizId, currentQuizSet[currentQuizId].answer.toString(),
+                          currentQuizSet, quizzesCompleted, lastEndlessQuizzes,
+                          setQuizzesCompleted, setCurrentQuizId, setQuizResult, setSelectedAnswer, setLastEndlessQuizzes)}>
                       Next Question
                     </button>
                   : null
@@ -178,18 +182,35 @@
     currentQuizAnswer: string,
     allQuizzes: Quiz[],
     quizzesCompleted: number[],
+    lastEndlessQuizzes: number[],
     setQuizzesCompleted: (completed: number[]) => void,
     setCurrentQuizId: (id: number) => void,
     setQuizResult: (result: string) => void,
-    setSelectedAnswer: (answer: string) => void
+    setSelectedAnswer: (answer: string) => void,
+    setLastEndlessQuizzes: (list: number[]) => void
   ) {
-    if(selectedAnswer === currentQuizAnswer && quizMode !== "endless") {
-      const updatedCompleted = [...quizzesCompleted, currentQuizId];
-      setQuizzesCompleted(updatedCompleted);
-      if(updatedCompleted.length !== allQuizzes.length) {
-        let nextQuiz = currentQuizId;
-        while(updatedCompleted.includes(nextQuiz)) {
-          nextQuiz = Math.floor(Math.random() * allQuizzes.length);
+    if(selectedAnswer === currentQuizAnswer) {
+      if(quizMode === "marathon") {
+        const updatedCompleted = [...quizzesCompleted, currentQuizId];
+        setQuizzesCompleted(updatedCompleted);
+        if(updatedCompleted.length !== allQuizzes.length) {
+          let nextQuiz = currentQuizId;
+          while(updatedCompleted.includes(nextQuiz)) {
+            nextQuiz = Math.floor(Math.random() * allQuizzes.length);
+          }
+          setCurrentQuizId(nextQuiz);
+          setQuizResult("");
+          setSelectedAnswer("");
+        }
+      } else if(quizMode === "endless") {
+        const updatedLastEndless = [...lastEndlessQuizzes, currentQuizId];
+        if(updatedLastEndless.length > endlessThreshold) {
+          updatedLastEndless.shift();
+        }
+        setLastEndlessQuizzes(updatedLastEndless);
+        let nextQuiz = Math.floor(Math.random() * allQuizzes.length);
+        while(updatedLastEndless.includes(nextQuiz)) {
+            nextQuiz = Math.floor(Math.random() * allQuizzes.length);
         }
         setCurrentQuizId(nextQuiz);
         setQuizResult("");
