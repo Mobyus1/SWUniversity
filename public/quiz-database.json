@@ -278,5 +278,19 @@
       "relevantCards": ["SOR/004-portrait", "SOR/130"],
       "relevantRule": "Since Chirrut's ability prevents him from being defeated during the Action Phase no matter how much damage he takes, no Overwhelm damage may be done to the base.\n\n7.5.7.F. - If an attacker with Overwhelm does not defeat the defender while attacking, no damage is dealt to the enemy base.",
       "tags": ["chirrut", "first legion snowtrooper", "abilities", "overwhelm", "leader", "damaged unit", "on attack"]
+   },
+   {
+      "id": 21,
+      "question": "Player A has Ahsoka Tano, Snips, deployed as a unit and an exhausted Advanced Recon Commando in play with no other units. They play a Pelta Supply Frigate. Do they create a Clone Trooper token and why?",
+      "choices": {
+         "a": "Yes. Pelta Supply Frigate counts itself as the third unit needed for Coordinate to be active.",
+         "b": "Yes. Coordinate is always active when your leader is deployed.",
+         "c": "No. They only have two units in play at the time Pelta Supply Frigate is played.",
+         "d": "No. Advanced Recon Commando needs to be ready to count towards Coordinate."
+      },
+      "answer": "a",
+      "relevantCards": ["TWI/011-portrait", "TWI/093", "TWI/095"],
+      "relevantRule": "Coordinate doesn't care whether your units are ground, space, ready, exhausted, or your leader. So long as you control 3 units, Coordinate is active. Also, since When Played abilities resolve after the unit is in play, units with When Played abilities using Coordinate count themselves!\n\n7.5.15.A - \"Coordinate\" is a keyword followed by a dash and ability text whose effect is the same as the constant ability: \"While you control 3 or more units, this card gains the following ability.\"\n\n7.6.13.A - Some triggered abilities are indicated with \"When Played\" in bold, followed by a colon and an effect. These abilities trigger when the card they’re on is played and resolve after the card’s cost is paid and it is put into play.",
+      "tags": ["pelta supply frigate", "ahsoka tano", "advanced recon commando", "coordinate", "when played", "trigger"]
    }
 ]
