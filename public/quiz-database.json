@@ -66,7 +66,7 @@
       },
       "answer": "a",
       "relevantCards": ["SOR/185", "SHD/090", "TWI/135"],
-      "relevantRule": " ",
+      "relevantRule": "Even though the name \"Darth Maul\" contains the name \"Maul\", they are not identical names and therefore different targets when naming a card.\n\n8.18.2 - A card \"shares a name\" with another card if their full names are identical. A card does not need to share a subtitle with another card to share a name with it.",
       "tags": ["chimaera", "name", "discard", "maul", "darth maul", "hand", "when played", "reveal"]
    },
    {
@@ -150,7 +150,7 @@
       },
       "answer": "d",
       "relevantCards": ["SHD/135", "SOR/203"],
-      "relevantRule": " ",
+      "relevantRule": "Once a player claims the initiative, they are forced to pass for the remainder of the phase. Since Kylo's TIE Silencer's ability is an Action Ability and not a Triggered Ability, Player A would need to use an action to play it from their discard.\n\n1.15.5.B - After taking the initiative, a player cannot use their turn to take any further actions for the rest of that round’s action phase. They are considered to have \"passed,\" and they automatically \"pass\" for all remaining turns they would take that phase. However, they still resolve any triggered abilities they control during that phase.",
       "tags": ["kylo's tie silencer", "cunning", "random", "discard", "discard pile", "play a card", "initiative", "for this phase"]
    },
    {
@@ -169,16 +169,16 @@
    },
    {
       "id": 13,
-      "question": "Player B has 2 HP remaining on their base and controls a Krayt Dragon. Player A has 1 HP remaining on their base and plays a Daring Raid, targeting Player B's base. What best describes what happens?",
+      "question": "Player A has 2 HP remaining on their base and controls a Krayt Dragon. Player B has 1 HP remaining on their base and plays a Daring Raid, targeting Player B's base. What best describes what happens?",
       "choices": {
-        "a": "As the active player, Player A gets to choose which player resolves their triggers first and can choose to resolve Daring Raid before Player B resolves Krayt Dragon, meaning Player A wins the game.",
-        "b": "Events must fully resolve before any abilities that trigger because of them can resolve, meaning Player A wins the game.",
-        "c": "Since Krayt Dragon triggers whenever an opponent plays a card, it resolves before the Event, meaning Player B can deal 1 damage to Player A's base first, meaning Player A loses the game.",
+        "a": "As the active player, Player B gets to choose which player resolves their triggers first and can choose to resolve Daring Raid before Player A resolves Krayt Dragon, meaning Player B wins the game.",
+        "b": "Events must fully resolve before any abilities that trigger because of them can resolve, meaning Player B wins the game.",
+        "c": "Since Krayt Dragon triggers whenever an opponent plays a card, it resolves before the Event, meaning Player A can deal 1 damage to Player B's base first, meaning Player A wins the game.",
         "d": "Both players take damage to their bases at the same time. The game ends in a draw."
       },
       "answer": "b",
       "relevantCards": ["SHD/172", "SHD/178"],
-      "relevantRule": " ",
+      "relevantRule": "While Krayt Dragon's ability triggers as soon as Player B plays Daring Raid, the ability waits to resolve until the next available window, which is after the Event resolves. Unfortunately for Player A in this case, as soon as a base has 0 HP remaining, the game ends.\n\n5.6.2 - Once a player’s base has 0 remaining HP, they cannot take any actions, and cannot resolve any abilities or effects.\n\n7.6.8 - If an ability triggers during or as the result of a non-attack action, resolve that ability at the next available opportunity after that action is fully completed. If an ability triggers during an attack, resolve that ability at the appropriate timing point within that attack. Resolving a triggered ability never interrupts an action or ability that is currently resolving (other than the specified timing points during an attack), unless the currently resolving action or ability uses \"after,\" as described below. See 6.3. Attack With a Unit",
       "tags": ["krayt dragon", "daring raid", "trigger", "event", "play a card", "timing", "abilities"]
    },
    {
@@ -206,7 +206,7 @@
       },
       "answer": "c",
       "relevantCards": ["SOR/193", "JTL/094"],
-      "relevantRule": "When a unit returns to hand, all upgrades attached to it are defeated, meaning Player A has the choice to make Luke a ground unit. If they do, the timing for readying cards during the Regroup Phase has already passed (that's when Millennium Falcon's ability triggered), meaning he will remain exhausted leading into the next round.",
+      "relevantRule": "When a unit returns to hand, all upgrades attached to it are defeated, meaning Player A has the choice to make Luke a ground unit. If they do, the timing for readying cards during the Regroup Phase has already passed (that's when Millennium Falcon's ability triggered), meaning he will remain exhausted leading into the next round."\n\n3.6.11 - An upgrade is defeated when either the unit it is attached to leaves play, or when an ability defeats it directly. When an upgrade is defeated, the attached unit loses all power, HP, and abilities given to it by the upgrade, and the upgrade is placed in its owner’s discard pile.\n\n5.5.1 - The regroup phase consists of the following 5 steps, in order: Start of the regroup phase, Draw cards, Resource cards, Ready cards, End of the regroup phase.",
       "tags": ["millennium falcon", "luke skywalker", "trigger", "timing", "regroup phase", "bounce", "pilot", "ability"]
    },
    {
@@ -220,7 +220,7 @@
       },
       "answer": "b",
       "relevantCards": ["SOR/154", "SOR/009-portrait"],
-      "relevantRule": "Only units in-play at the time a lasting effect is created, such as Rallying Cry, benefit from the effect.",
+      "relevantRule": "Only units in play at the time a lasting effect is created, such as the one created by Rallying Cry, benefit from the effect.\n\n7.7.3.D - By default, a lasting effect only applies to a card that’s in play at the time of the lasting effect’s creation. For a lasting effect to affect a card in an out-of-play zone, the ability that created that effect must explicitly state so.",
       "tags": ["rallying cry", "leia organa", "lasting effect", "raid", "event"]
    },
    {
@@ -234,7 +234,7 @@
       },
       "answer": "a",
       "relevantCards": ["JTL/009-portrait", "JTL/237", "SOR/184"],
-      "relevantRule": "Italicized reminder text on cards has no impact on game rules and can be wholly ignored when reading a card's effect. In the case of Fett's Firespray, so long as the player controls any Boba Fett in any form, it can ready as a result of its When Played ability. ",
+      "relevantRule": "Italicized reminder text on cards has no impact on game rules and can be wholly ignored when reading a card's effect. In the case of Fett's Firespray, so long as the player controls any Boba Fett in any form, it can ready as a result of its When Played ability.\n\n2.13.2 - A card’s ability may be followed by italicized text in parentheses. Such text is called \"reminder text,\" and offers a simplified clarification of how that ability affects the game. Reminder text serves as a guide for ease of play, but does not override any rules in this Comprehensive Rules document. The presence or absence of reminder text does not mechanically affect the abilities on a card.",
       "tags": ["fett's firespray", "boba fett", "readying", "when played", "pilot", "control"]
    },
    {
@@ -248,7 +248,7 @@
       },
       "answer": "c",
       "relevantCards": ["SOR/141", "JTL/096", "JTL/135"],
-      "relevantRule": "When Blue Leader moves to the ground arena as a result of its ability, it becomes a ground unit, even if it still says \"Space Unit\" at the top of the card. Also, a unit enters play before its own When Played ability resolves, so Special Forces TIE Fighter absolutely does count itself.",
+      "relevantRule": "When Blue Leader moves to the ground arena as a result of its ability, it becomes a ground unit, even if it still says \"Space Unit\" at the top of the card. Also, a unit enters play before its own When Played ability resolves, so Special Forces TIE Fighter absolutely does count itself.\n\n4.3.5 - Units in the ground arena are considered ground units and not space units while in play, regardless of what their arena type is.\n\n7.6.13.A - Some triggered abilities are indicated with \"When Played\" in bold, followed by a colon and an effect. These abilities trigger when the card they’re on is played and resolve after the card’s cost is paid and it is put into play.",
       "tags": ["special forces tie fighter", "blue leader", "green squadron a-wing", "when played"]
    },
    {
