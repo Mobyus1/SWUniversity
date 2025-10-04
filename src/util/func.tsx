@@ -8,6 +8,7 @@ export type Quiz = {
   relevantCards: string[];
   relevantRule: string;
   tags: string[];
+  difficulty: number;
 }
 
 const notBeforeId = 1;
