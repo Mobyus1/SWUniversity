@@ -1,159 +1,159 @@
 [
-  {
-     "id": 1,
-     "question": "Player A has the initiative and a Baze Malbus, Temple Guardian, in play. Player B plays a SpecForce Soldier and targets Baze Malbus, causing it to lose Sentinel for the phase. Later in the same phase, Player A plays Protector and attaches it to their Baze Malbus. What best describes what happens?",
-     "choices": {
-        "a": "Protector gives Baze Malbus both +1/+1 and Sentinel immediately.",
-        "b": "Protector gives Baze +1/+1 immediately, but he cannot regain Sentinel until the end of the phase.",
-        "c": "Protector waits until the end of the phase to give Baze both +1/+1 and Sentinel.",
-        "d": "Protector cannot be attached to Baze."
-     },
-     "answer": "b",
-     "relevantCards": ["SOR/065", "SOR/140", "SOR/057"],
-     "relevantRule": "If an effect causes a unit to lose an ability or keyword for a specific duration of time, that unit is not able to regain that particular ability or keyword until the specified period has ended.\n\n8.15.1 - If an ability causes a unit to \"lose\" a keyword, the unit ceases to have the specified keyword and any abilities granting it that keyword when the \"lose\" effect is resolved cease granting the keyword for the duration of the \"lose\" effect. The unit cannot regain that keyword for the duration of the effect.",
-     "tags": ["baze malbus","specforce soldier","protector","sentinel","losing abilities","upgrade"]
-  },
-  {
-     "id": 2,
-     "question": "Player A plays Mon Mothma, Voice of the Rebellion. Among the searched cards, they find a SpecForce Soldier. Do they have to draw it?",
-     "choices": {
-       "a": "Yes. SpecForce Soldier is a Rebel card so it must be drawn.",
-       "b": "No. SpecForce Soldier is not a Rebel card, so it is not a valid choice.",
-       "c": "Yes. SpecForce Soldier has a When Played ability so it must be drawn.",
-       "d": "No. It is possible to fail to find a card from a hidden zone, even if one exists."
-     },
-     "answer": "d",
-     "relevantCards": ["SOR/096", "SOR/140"],
-     "relevantRule": "When an ability instructs a player to select something from a hidden zone, such as their hand, resources, or a portion of their deck, since that information is unknown to their opponents, the player is permitted to act as if the contents of the hidden zone do not contain the intended target. This would not be the case, however, if the player was instructed to \"reveal\" a portion of their deck instead.\n\n1.3.2 - While resolving a card ability, resolve as much of the ability as possible, and ignore any parts of the ability that cannot be resolved. (Note that you may choose to resolve abilities involving hidden information as though you have fewer options than you really do.) \n\n8.27.1 - When an ability instructs a player to \"search\" a deck, that player looks at a number of cards from that deck to find one or more cards, often with a specified attribute. The player chooses one or more cards (as indicated by the ability) and returns the other cards to that deck as specified below. The ability then instructs the player on what to do with the card(s) they have chosen. The player may also choose to resolve the ability as though no appropriate card was found.",
-     "tags": ["mon mothma", "search", "hidden zone", "draw", "reveal", "when played", "rebel"]
-  },
-  {
-    "id": 3,
-    "question": "Player A plays Chewbacca, Faithful First Mate, as a Pilot, attaching him to a friendly Cartel Turncoat. Player B then plays Spare the Target, targeting Player A's Cartel Turncoat. What best describes what happens?",
-    "choices": {
-      "a": "Cartel Turncoat is returned to Player A's hand, defeating Chewbacca, and Player B draws a card.",
-      "b": "Chewbacca prevents Cartel Turncoat from being returned to hand, so nothing happens.",
-      "c": "Chewbacca prevents Cartel Turncoat from being returned to hand, but Player B still draws a card.",
-      "d": "Chewbacca's ability prevents Spare the Target from being played on Cartel Turncoat, so this play is illegal."
-    },
-    "answer": "c",
-    "relevantCards": ["JTL/103", "SHD/195", "SHD/206"],
-    "relevantRule": "Since Spare the Target does not specify \"If you do...\", collecting the target's Bounties happens whether the unit is returned to hand or not.\n\n1.3.2 - While resolving a card ability, resolve as much of the ability as possible, and ignore any parts of the ability that cannot be resolved. (Note that you may choose to resolve abilities involving hidden information as though you have fewer options than you really do.)",
-    "tags": ["chewbacca", "spare the target", "bounty", "bounce", "removal", "prevent", "pilot"]
-  },
-  {
-    "id": 4,
-    "question": "Player A is playing the leader Grand Inquisitor, Hunting the Jedi, and has an exhausted Hylobon Enforcer with 1 damage on it in play. They use Grand Inquisitor's leader ability, targeting their Hylobon Enforcer. What best describes what happens?",
-    "choices": {
-      "a": "Hylobon Enforcer takes 2 damage, becoming a 4/1, then readies.",
-      "b": "Hylobon Enforcer takes 2 damage, becoming a 4/1, and does not ready.",
-      "c": "Hylobon Enforcer is not a valid target because the 2 damage would result in it having more than 3 power.",
-      "d": "Hylobon Enforcer is not a valid target because it is not an Aggression unit."
-    },
-    "answer": "a",
-    "relevantCards": ["SOR/011", "SHD/027"],
-    "relevantRule": "Once a target is chosen for an ability, the ability resolves in full even if the target becomes what would have been an ineligible target for the ability in the first place. Since Hylobon Enforcer had less than 3 power when it was targeted by Grand Inquisitor's ability, it still readies despite having 4 power by the end of the effect.",
-    "tags": ["grand inquisitor", "hylobon enforcer", "target", "bounty", "grit", "readying"]
-  },
-  {
-    "id": 5,
-    "question": "Player A attacks Player B's base with Chimaera, Flagship of the Seventh Fleet, and names \"Maul.\" Player B reveals their hand which contains Maul, Shadow Collective Visionary, and Darth Maul, Revenge at Last. Which card(s) can Player A make Player B discard?",
-    "choices": {
-      "a": "Only Maul, Shadow Collective Visionary.",
-      "b": "Only Darth Maul, Revenge at Last.",
-      "c": "Either of the two.",
-      "d": "Neither of the two."
-    },
-    "answer": "a",
-    "relevantCards": ["SOR/185", "SHD/090", "TWI/135"],
-    "relevantRule": " ",
-    "tags": ["chimaera", "name", "discard", "maul", "darth maul", "hand", "when played", "reveal"]
-  },
-  {
-    "id": 6,
-    "question": "Player A plays a Privateer Scyk with no other units in play. On their next action, they play Liberated Slaves. Does their Privateer Scyk get a shield token and why?",
-    "choices": {
-      "a": "Yes. Player A now controls another Cunning unit so Privateer Scyk gains Shielded and a shield token.",
-      "b": "No. Even though Player A now controls another Cunning unit, the trigger timing for Shielded has passed.",
-      "c": "Yes, but only because Privateer Scyk did not get a shield token earlier in the round.",
-      "d": "No. Liberated Slaves has both the Cunning and Heroism aspects and therefore does not satisfy Privateer Scyk's requirements."
-    },
-    "answer": "b",
-    "relevantCards": ["SHD/212", "SHD/200"],
-    "relevantRule": "While Privateer Scyk would technically gain the keyword Shielded while Liberated Slaves is in play, Shielded is a keyword that resolves when the unit is played, meaning it would not get a shield token unless Liberated Slaves (or any friendly Cunning unit) was in play at the time Privateer Scyk was played.\n\n7.5.12.B - Shielded resolves in the same window as any \"When Played\" abilities on the unit.",
-    "tags": ["privateer scyk", "liberated slaves", "shielded", "trigger", "when played", "timing"]
-  },
-  {
-    "id": 7,
-    "question": "Player A controls a deployed Darth Vader, Dark Lord of the Sith. Player B controls a Supercommando Squad with a shield token and no other units. Player A declares that they are attacking with Darth Vader and use his On Attack to deal 2 damage to Supercommando Squad, defeating its shield token. Player A then declares Player B's base as the target for Darth Vader's attack and deals 5 damage to it. Is this a legal attack and why or why not?",
-    "choices": {
-      "a": "Yes. Darth Vader's On Attack defeating the shield token means the Supercommando Squad is no longer upgraded and loses Sentinel.",
-      "b": "Yes. The Supercommando Squad was not upgraded and therefore did not have Sentinel in the first place.",
-      "c": "No. Since Darth Vader is attacking Player B's base, his On Attack cannot damage the Supercommando Squad.",
-      "d": "No. The target of an attack must be declared before any On Attack abilities resolve. Since the Supercommando Squad had Sentinel when the attack was declared, they must be the target of the attack."
-    },
-    "answer": "d",
-    "relevantCards": ["SOR/010-portrait", "SHD/034", "TSOR/T02"],
-    "relevantRule": "The first step in an attack is to \"Declare the attack\", and the first sub-step in that step is to choose a valid target. Only after a target for the attack has been selected do On Attack abilities resolve.\n\n6.3.0.E - Attacking With a Unit consists of the following 3 steps in order, explained in detail below: Declare the attack, Deal combat damage, and Complete the attack. After each step, resolve any abilities triggered during that step before proceeding to the next step in the attack. See 7.6. Triggered Abilities",
-    "tags": ["darth vader", "supercommando squad", "sentinel", "upgrade", "target", "on attack", "combat steps", "shield token"]
-  },
-  {
+   {
+      "id": 1,
+      "question": "Player A has the initiative and a Baze Malbus, Temple Guardian, in play. Player B plays a SpecForce Soldier and targets Baze Malbus, causing it to lose Sentinel for the phase. Later in the same phase, Player A plays Protector and attaches it to their Baze Malbus. What best describes what happens?",
+      "choices": {
+         "a": "Protector gives Baze Malbus both +1/+1 and Sentinel immediately.",
+         "b": "Protector gives Baze +1/+1 immediately, but he cannot regain Sentinel until the end of the phase.",
+         "c": "Protector waits until the end of the phase to give Baze both +1/+1 and Sentinel.",
+         "d": "Protector cannot be attached to Baze."
+      },
+      "answer": "b",
+      "relevantCards": ["SOR/065", "SOR/140", "SOR/057"],
+      "relevantRule": "If an effect causes a unit to lose an ability or keyword for a specific duration of time, that unit is not able to regain that particular ability or keyword until the specified period has ended.\n\n8.15.1 - If an ability causes a unit to \"lose\" a keyword, the unit ceases to have the specified keyword and any abilities granting it that keyword when the \"lose\" effect is resolved cease granting the keyword for the duration of the \"lose\" effect. The unit cannot regain that keyword for the duration of the effect.",
+      "tags": ["baze malbus","specforce soldier","protector","sentinel","losing abilities","upgrade"]
+   },
+   {
+      "id": 2,
+      "question": "Player A plays Mon Mothma, Voice of the Rebellion. Among the searched cards, they find a SpecForce Soldier. Do they have to draw it?",
+      "choices": {
+         "a": "Yes. SpecForce Soldier is a Rebel card so it must be drawn.",
+         "b": "No. SpecForce Soldier is not a Rebel card, so it is not a valid choice.",
+         "c": "Yes. SpecForce Soldier has a When Played ability so it must be drawn.",
+         "d": "No. It is possible to fail to find a card from a hidden zone, even if one exists."
+      },
+      "answer": "d",
+      "relevantCards": ["SOR/096", "SOR/140"],
+      "relevantRule": "When an ability instructs a player to select something from a hidden zone, such as their hand, resources, or a portion of their deck, since that information is unknown to their opponents, the player is permitted to act as if the contents of the hidden zone do not contain the intended target. This would not be the case, however, if the player was instructed to \"reveal\" a portion of their deck instead.\n\n1.3.2 - While resolving a card ability, resolve as much of the ability as possible, and ignore any parts of the ability that cannot be resolved. (Note that you may choose to resolve abilities involving hidden information as though you have fewer options than you really do.) \n\n8.27.1 - When an ability instructs a player to \"search\" a deck, that player looks at a number of cards from that deck to find one or more cards, often with a specified attribute. The player chooses one or more cards (as indicated by the ability) and returns the other cards to that deck as specified below. The ability then instructs the player on what to do with the card(s) they have chosen. The player may also choose to resolve the ability as though no appropriate card was found.",
+      "tags": ["mon mothma", "search", "hidden zone", "draw", "reveal", "when played", "rebel"]
+   },
+   {
+      "id": 3,
+      "question": "Player A plays Chewbacca, Faithful First Mate, as a Pilot, attaching him to a friendly Cartel Turncoat. Player B then plays Spare the Target, targeting Player A's Cartel Turncoat. What best describes what happens?",
+      "choices": {
+         "a": "Cartel Turncoat is returned to Player A's hand, defeating Chewbacca, and Player B draws a card.",
+         "b": "Chewbacca prevents Cartel Turncoat from being returned to hand, so nothing happens.",
+         "c": "Chewbacca prevents Cartel Turncoat from being returned to hand, but Player B still draws a card.",
+         "d": "Chewbacca's ability prevents Spare the Target from being played on Cartel Turncoat, so this play is illegal."
+      },
+     "answer": "c",
+     "relevantCards": ["JTL/103", "SHD/195", "SHD/206"],
+     "relevantRule": "Since Spare the Target does not specify \"If you do...\", collecting the target's Bounties happens whether the unit is returned to hand or not.\n\n1.3.2 - While resolving a card ability, resolve as much of the ability as possible, and ignore any parts of the ability that cannot be resolved. (Note that you may choose to resolve abilities involving hidden information as though you have fewer options than you really do.)",
+     "tags": ["chewbacca", "spare the target", "bounty", "bounce", "removal", "prevent", "pilot"]
+   },
+   {
+      "id": 4,
+      "question": "Player A is playing the leader Grand Inquisitor, Hunting the Jedi, and has an exhausted Hylobon Enforcer with 1 damage on it in play. They use Grand Inquisitor's leader ability, targeting their Hylobon Enforcer. What best describes what happens?",
+      "choices": {
+         "a": "Hylobon Enforcer takes 2 damage, becoming a 4/1, then readies.",
+         "b": "Hylobon Enforcer takes 2 damage, becoming a 4/1, and does not ready.",
+         "c": "Hylobon Enforcer is not a valid target because the 2 damage would result in it having more than 3 power.",
+         "d": "Hylobon Enforcer is not a valid target because it is not an Aggression unit."
+      },
+      "answer": "a",
+      "relevantCards": ["SOR/011", "SHD/027"],
+      "relevantRule": "Once a target is chosen for an ability, the ability resolves in full even if the target becomes what would have been an ineligible target for the ability in the first place. Since Hylobon Enforcer had less than 3 power when it was targeted by Grand Inquisitor's ability, it still readies despite having 4 power by the end of the effect.",
+      "tags": ["grand inquisitor", "hylobon enforcer", "target", "bounty", "grit", "readying"]
+   },
+   {
+      "id": 5,
+      "question": "Player A attacks Player B's base with Chimaera, Flagship of the Seventh Fleet, and names \"Maul.\" Player B reveals their hand which contains Maul, Shadow Collective Visionary, and Darth Maul, Revenge at Last. Which card(s) can Player A make Player B discard?",
+      "choices": {
+         "a": "Only Maul, Shadow Collective Visionary.",
+         "b": "Only Darth Maul, Revenge at Last.",
+         "c": "Either of the two.",
+         "d": "Neither of the two."
+      },
+      "answer": "a",
+      "relevantCards": ["SOR/185", "SHD/090", "TWI/135"],
+      "relevantRule": " ",
+      "tags": ["chimaera", "name", "discard", "maul", "darth maul", "hand", "when played", "reveal"]
+   },
+   {
+      "id": 6,
+      "question": "Player A plays a Privateer Scyk with no other units in play. On their next action, they play Liberated Slaves. Does their Privateer Scyk get a shield token and why?",
+      "choices": {
+         "a": "Yes. Player A now controls another Cunning unit so Privateer Scyk gains Shielded and a shield token.",
+         "b": "No. Even though Player A now controls another Cunning unit, the trigger timing for Shielded has passed.",
+         "c": "Yes, but only because Privateer Scyk did not get a shield token earlier in the round.",
+         "d": "No. Liberated Slaves has both the Cunning and Heroism aspects and therefore does not satisfy Privateer Scyk's requirements."
+      },
+      "answer": "b",
+      "relevantCards": ["SHD/212", "SHD/200"],
+      "relevantRule": "While Privateer Scyk would technically gain the keyword Shielded while Liberated Slaves is in play, Shielded is a keyword that resolves when the unit is played, meaning it would not get a shield token unless Liberated Slaves (or any friendly Cunning unit) was in play at the time Privateer Scyk was played.\n\n7.5.12.B - Shielded resolves in the same window as any \"When Played\" abilities on the unit.",
+      "tags": ["privateer scyk", "liberated slaves", "shielded", "trigger", "when played", "timing"]
+   },
+   {
+      "id": 7,
+      "question": "Player A controls a deployed Darth Vader, Dark Lord of the Sith. Player B controls a Supercommando Squad with a shield token and no other units. Player A declares that they are attacking with Darth Vader and use his On Attack to deal 2 damage to Supercommando Squad, defeating its shield token. Player A then declares Player B's base as the target for Darth Vader's attack and deals 5 damage to it. Is this a legal attack and why or why not?",
+      "choices": {
+         "a": "Yes. Darth Vader's On Attack defeating the shield token means the Supercommando Squad is no longer upgraded and loses Sentinel.",
+         "b": "Yes. The Supercommando Squad was not upgraded and therefore did not have Sentinel in the first place.",
+         "c": "No. Since Darth Vader is attacking Player B's base, his On Attack cannot damage the Supercommando Squad.",
+         "d": "No. The target of an attack must be declared before any On Attack abilities resolve. Since the Supercommando Squad had Sentinel when the attack was declared, they must be the target of the attack."
+      },
+      "answer": "d",
+      "relevantCards": ["SOR/010-portrait", "SHD/034", "TSOR/T02"],
+      "relevantRule": "The first step in an attack is to \"Declare the attack\", and the first sub-step in that step is to choose a valid target. Only after a target for the attack has been selected do On Attack abilities resolve.\n\n6.3.0.E - Attacking With a Unit consists of the following 3 steps in order, explained in detail below: Declare the attack, Deal combat damage, and Complete the attack. After each step, resolve any abilities triggered during that step before proceeding to the next step in the attack. See 7.6. Triggered Abilities",
+      "tags": ["darth vader", "supercommando squad", "sentinel", "upgrade", "target", "on attack", "combat steps", "shield token"]
+   },
+   {
       "id": 8,
       "question": "Player A controls Grogu, Irresistable. Player B controls an exhausted Death Star Stormtrooper, a ready TIE/ln Fighter, and a deployed and ready Grand Moff Tarkin, Oversector Governor. Which of the above is NOT a valid target for Grogu's ability?",
       "choices": {
-        "a": "The Death Star Stormtrooper because it is already exhausted.",
-        "b": "The TIE/ln Fighter because it is a space unit.",
-        "c": "Grand Moff Tarkin because he is a leader unit.",
-        "d": "They are all valid targets."
+         "a": "The Death Star Stormtrooper because it is already exhausted.",
+         "b": "The TIE/ln Fighter because it is a space unit.",
+         "c": "Grand Moff Tarkin because he is a leader unit.",
+         "d": "They are all valid targets."
       },
       "answer": "d",
       "relevantCards": ["SHD/196", "SOR/128", "SOR/225", "SOR/007-portrait"],
       "relevantRule": "Grogu's ability does not state any restrictions on valid targets, meaning any unit in play can be chosen, even an already exhausted unit... although in that case, it would not trigger any other abilities requiring a unit to become exhausted.\n\n1.5.4.E - A ready card can be chosen for a readying effect, but the chosen card does not change orientation and is not considered to have been readied for the purpose of \"If you do\" effects. An exhausted card can be chosen for an exhausting effect, but the chosen card does not change orientation and is not considered to have been exhausted for the purpose of \"If you do\" effects",
       "tags": ["grogu", "exhaust", "death star stormtrooper", "tie/ln fighter", "grand moff tarkin", "target"]
-  },
-  {
-     "id": 9,
-     "question": "Player A has zero cards remaining in their deck. They attack with Reinforcement Walker. What best describes what happens?",
-     "choices": {
-        "a": "Reinforcement Walker's ability causes Player A's base to take 3 damage by attempting to look at a card from an empty deck.",
-        "b": "Reinforcement Walker's ability heals Player A's base for 3 HP.",
-        "c": "Reinforcement Walker's ability does nothing.",
-        "d": "Reinforcement Walker's ability causes Player A's base to take 3 damage by attempting to look at a card from an empty deck initially, but then heals it for 3 HP since Player A was not able to draw the non-existent card."
-     },
-     "answer": "c",
-     "relevantCards": ["SOR/119"],
-     "relevantRule": "Only attempting the specific act of drawing a card from an empty deck results in taking 3 damage to base. Other effects, such as looking at, revealing, searching, discarding, etc... all do not. In the case of Reinforcement Walker, the ability attempts to look at a card that does not exist, so the ability simply does nothing.\n\n1.3.2 - Do as Much as You Can: While resolving a card ability, resolve as much of the ability as possible, and ignore any parts of the ability that cannot be resolved. (Note that you may choose to resolve abilities involving hidden information as though you have fewer options than you really do.)"\n\n8.7.2 - If an ability would cause a player to shuffle, discard, search, reveal, or look at cards from an empty deck, they ignore that part of the ability.",
-     "tags": ["reinforcement walker", "draw", "on attack", "empty deck"]
-  },
-  {
+   },
+   {
+      "id": 9,
+      "question": "Player A has zero cards remaining in their deck. They attack with Reinforcement Walker. What best describes what happens?",
+      "choices": {
+         "a": "Reinforcement Walker's ability causes Player A's base to take 3 damage by attempting to look at a card from an empty deck.",
+         "b": "Reinforcement Walker's ability heals Player A's base for 3 HP.",
+         "c": "Reinforcement Walker's ability does nothing.",
+         "d": "Reinforcement Walker's ability causes Player A's base to take 3 damage by attempting to look at a card from an empty deck initially, but then heals it for 3 HP since Player A was not able to draw the non-existent card."
+      },
+      "answer": "c",
+      "relevantCards": ["SOR/119"],
+      "relevantRule": "Only attempting the specific act of drawing a card from an empty deck results in taking 3 damage to base. Other effects, such as looking at, revealing, searching, discarding, etc... all do not. In the case of Reinforcement Walker, the ability attempts to look at a card that does not exist, so the ability simply does nothing.\n\n1.3.2 - Do as Much as You Can: While resolving a card ability, resolve as much of the ability as possible, and ignore any parts of the ability that cannot be resolved. (Note that you may choose to resolve abilities involving hidden information as though you have fewer options than you really do.)"\n\n8.7.2 - If an ability would cause a player to shuffle, discard, search, reveal, or look at cards from an empty deck, they ignore that part of the ability.",
+      "tags": ["reinforcement walker", "draw", "on attack", "empty deck"]
+   },
+   {
       "id": 10,
       "question": "Player A has played two cards already this phase. Player A then uses Han Solo, Worth the Risk's leader ability to play Vanguard Ace. What best describes what happens?",
       "choices": {
-        "a": "Vanguard Ace enters play as a 3/3, then takes 2 damage from Han's ability.",
-        "b": "Vanguard Ace enters play as a 1/1 and is defeated by Han's ability before its When Played resolves.",
-        "c": "It depends on how many of the two previously played cards were units.",
-        "d": "Player A gets to decide in what order Han's ability and Vanguard Ace's abilities resolve."
+         "a": "Vanguard Ace enters play as a 3/3, then takes 2 damage from Han's ability.",
+         "b": "Vanguard Ace enters play as a 1/1 and is defeated by Han's ability before its When Played resolves.",
+         "c": "It depends on how many of the two previously played cards were units.",
+         "d": "Player A gets to decide in what order Han's ability and Vanguard Ace's abilities resolve."
       },
       "answer": "b",
       "relevantCards": ["SOR/191", "SHD/013"],
       "relevantRule": "Han's leader ability results in a modified \"Play a card\" action and, like any all abilities that result in a modified action, must resolve in full before any resulting triggers can resolve, meaning the 2 damage is dealt to the Vanguard Ace while it's still a 1/1, defeating it.\n\n7.1.6.B - A modified \"Play a Card\" action might include: restrictions on the type of card that can be played, cost adjustments, playing cards from other zones, or other effects. Any abilities triggered during or as a result of a modified \"Play a Card\" action are resolved after the current ability is finished resolving.",
       "tags": ["vanguard ace", "han solo", "when played", "experience", "trigger"]
-  },
-  {
+   },
+   {
       "id": 11,
       "question": "Player A claims the initiative while still having 2 ready resources. Player B plays Cunning and chooses to have Player A discard a random card from their hand. Player A randomly discards Kylo's TIE Silencer, Ruthlessly Efficient. When can Player A play the discarded Kylo's TIE Silencer from their discard pile?",
       "choices": {
-        "a": "They can play it immediately in response to discarding it.",
-        "b": "They can play it as their next action.",
-        "c": "They can play it any time during the next round.",
-        "d": "They cannot play it."
+         "a": "They can play it immediately in response to discarding it.",
+         "b": "They can play it as their next action.",
+         "c": "They can play it any time during the next round.",
+         "d": "They cannot play it."
       },
       "answer": "d",
       "relevantCards": ["SHD/135", "SOR/203"],
       "relevantRule": " ",
       "tags": ["kylo's tie silencer", "cunning", "random", "discard", "discard pile", "play a card", "initiative", "for this phase"]
-  },
-  {
+   },
+   {
       "id": 12,
       "question": "Player A controls Bossk, Deadly Stalker, and Player B controls Bib Fortuna, Jabba's Majordomo, with a shield token. Player A plays Ma Klounkee returning Bossk to hand. Does this defeat Bib Fortuna and why?",
       "choices": {
