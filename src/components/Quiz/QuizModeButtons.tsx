@@ -12,7 +12,7 @@ interface IProps {
 export function QuizModeButtons({setQuizMode, setCurrentQuizSet, setCurrentQuizId, allQuizzes, marathonSet}: IProps) {
   return <div className="flex flex-col md:flex-row gap-2 mb-8 h-full">
     <div className={`${globalBackgroundStyle} border p-4 rounded flex flex-col items-center justify-center flex-1`}>
-      <h3 className="text-xl mb-4">DESCRIPTION TEXT</h3>
+      <h3 className="text-xl mb-4">Correctly answer every question in the database once to complete the marathon!</h3>
       <button
         className="btn btn-primary text-lg py-8 lg:py-5 w-1/2"
         onClick={() => {
@@ -27,7 +27,7 @@ export function QuizModeButtons({setQuizMode, setCurrentQuizSet, setCurrentQuizI
     </div>
 
     <div className={`${globalBackgroundStyle} border p-4 rounded flex flex-col items-center justify-center flex-1`}>
-      <h3 className="text-xl mb-4">DESCRIPTION TEXT</h3>
+      <h3 className="text-xl mb-4">Answer random questions with no end in sight!</h3>
       <button
         className="btn btn-primary text-lg py-8 lg:py-5 w-1/2"
         onClick={() => {
