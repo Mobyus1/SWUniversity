@@ -11,7 +11,8 @@
       "answer": "b",
       "relevantCards": ["SOR/065", "SOR/140", "SOR/057"],
       "relevantRule": "If an effect causes a unit to lose an ability or keyword for a specific duration of time, that unit is not able to regain that particular ability or keyword until the specified period has ended.\n\n8.15.1 - If an ability causes a unit to \"lose\" a keyword, the unit ceases to have the specified keyword and any abilities granting it that keyword when the \"lose\" effect is resolved cease granting the keyword for the duration of the \"lose\" effect. The unit cannot regain that keyword for the duration of the effect.",
-      "tags": ["baze malbus","specforce soldier","protector","sentinel","losing abilities","upgrade"]
+      "tags": ["baze malbus","specforce soldier","protector","sentinel","losing abilities","upgrade"],
+      "difficulty": 1
    },
    {
       "id": 2,
@@ -25,7 +26,8 @@
       "answer": "d",
       "relevantCards": ["SOR/096", "SOR/140"],
       "relevantRule": "When an ability instructs a player to select something from a hidden zone, such as their hand, resources, or a portion of their deck, since that information is unknown to their opponents, the player is permitted to act as if the contents of the hidden zone do not contain the intended target. This would not be the case, however, if the player was instructed to \"reveal\" a portion of their deck instead.\n\n1.3.2 - While resolving a card ability, resolve as much of the ability as possible, and ignore any parts of the ability that cannot be resolved. (Note that you may choose to resolve abilities involving hidden information as though you have fewer options than you really do.) \n\n8.27.1 - When an ability instructs a player to \"search\" a deck, that player looks at a number of cards from that deck to find one or more cards, often with a specified attribute. The player chooses one or more cards (as indicated by the ability) and returns the other cards to that deck as specified below. The ability then instructs the player on what to do with the card(s) they have chosen. The player may also choose to resolve the ability as though no appropriate card was found.",
-      "tags": ["mon mothma", "search", "hidden zone", "draw", "reveal", "when played", "rebel"]
+      "tags": ["mon mothma", "search", "hidden zone", "draw", "reveal", "when played", "rebel"],
+      "difficulty": 1
    },
    {
       "id": 3,
@@ -39,7 +41,8 @@
      "answer": "c",
      "relevantCards": ["JTL/103", "SHD/195", "SHD/206"],
      "relevantRule": "Since Spare the Target does not specify \"If you do...\", collecting the target's Bounties happens whether the unit is returned to hand or not.\n\n1.3.2 - While resolving a card ability, resolve as much of the ability as possible, and ignore any parts of the ability that cannot be resolved. (Note that you may choose to resolve abilities involving hidden information as though you have fewer options than you really do.)",
-     "tags": ["chewbacca", "spare the target", "bounty", "bounce", "removal", "prevent", "pilot"]
+     "tags": ["chewbacca", "spare the target", "bounty", "bounce", "removal", "prevent", "pilot"],
+      "difficulty": 1
    },
    {
       "id": 4,
@@ -53,7 +56,8 @@
       "answer": "a",
       "relevantCards": ["SOR/011", "SHD/027"],
       "relevantRule": "Once a target is chosen for an ability, the ability resolves in full even if the target becomes what would have been an ineligible target for the ability in the first place. Since Hylobon Enforcer had less than 3 power when it was targeted by Grand Inquisitor's ability, it still readies despite having 4 power by the end of the effect.",
-      "tags": ["grand inquisitor", "hylobon enforcer", "target", "bounty", "grit", "readying"]
+      "tags": ["grand inquisitor", "hylobon enforcer", "target", "bounty", "grit", "readying"],
+      "difficulty": 1
    },
    {
       "id": 5,
@@ -67,7 +71,8 @@
       "answer": "a",
       "relevantCards": ["SOR/185", "SHD/090", "TWI/135"],
       "relevantRule": "Even though the name \"Darth Maul\" contains the name \"Maul\", they are not identical names and therefore different targets when naming a card.\n\n8.18.2 - A card \"shares a name\" with another card if their full names are identical. A card does not need to share a subtitle with another card to share a name with it.",
-      "tags": ["chimaera", "name", "discard", "maul", "darth maul", "hand", "when played", "reveal"]
+      "tags": ["chimaera", "name", "discard", "maul", "darth maul", "hand", "when played", "reveal"],
+      "difficulty": 0
    },
    {
       "id": 6,
@@ -81,7 +86,8 @@
       "answer": "b",
       "relevantCards": ["SHD/212", "SHD/200"],
       "relevantRule": "While Privateer Scyk would technically gain the keyword Shielded while Liberated Slaves is in play, Shielded is a keyword that resolves when the unit is played, meaning it would not get a shield token unless Liberated Slaves (or any friendly Cunning unit) was in play at the time Privateer Scyk was played.\n\n7.5.12.B - Shielded resolves in the same window as any \"When Played\" abilities on the unit.",
-      "tags": ["privateer scyk", "liberated slaves", "shielded", "trigger", "when played", "timing"]
+      "tags": ["privateer scyk", "liberated slaves", "shielded", "trigger", "when played", "timing"],
+      "difficulty": 1
    },
    {
       "id": 7,
@@ -95,7 +101,8 @@
       "answer": "d",
       "relevantCards": ["SOR/010-portrait", "SHD/034", "TSOR/T02"],
       "relevantRule": "The first step in an attack is to \"Declare the attack\", and the first sub-step in that step is to choose a valid target. Only after a target for the attack has been selected do On Attack abilities resolve.\n\n6.3.0.E - Attacking With a Unit consists of the following 3 steps in order, explained in detail below: Declare the attack, Deal combat damage, and Complete the attack. After each step, resolve any abilities triggered during that step before proceeding to the next step in the attack. See 7.6. Triggered Abilities",
-      "tags": ["darth vader", "supercommando squad", "sentinel", "upgrade", "target", "on attack", "combat steps", "shield token"]
+      "tags": ["darth vader", "supercommando squad", "sentinel", "upgrade", "target", "on attack", "combat steps", "shield token"],
+      "difficulty": 1
    },
    {
       "id": 8,
@@ -109,7 +116,8 @@
       "answer": "d",
       "relevantCards": ["SHD/196", "SOR/128", "SOR/225", "SOR/007-portrait"],
       "relevantRule": "Grogu's ability does not state any restrictions on valid targets, meaning any unit in play can be chosen, even an already exhausted unit... although in that case, it would not trigger any other abilities requiring a unit to become exhausted.\n\n1.5.4.E - A ready card can be chosen for a readying effect, but the chosen card does not change orientation and is not considered to have been readied for the purpose of \"If you do\" effects. An exhausted card can be chosen for an exhausting effect, but the chosen card does not change orientation and is not considered to have been exhausted for the purpose of \"If you do\" effects",
-      "tags": ["grogu", "exhaust", "death star stormtrooper", "tie/ln fighter", "grand moff tarkin", "target"]
+      "tags": ["grogu", "exhaust", "death star stormtrooper", "tie/ln fighter", "grand moff tarkin", "target"],
+      "difficulty": 0
    },
    {
       "id": 9,
@@ -123,7 +131,8 @@
       "answer": "c",
       "relevantCards": ["SOR/119"],
       "relevantRule": "Only attempting the specific act of drawing a card from an empty deck results in taking 3 damage to base. Other effects, such as looking at, revealing, searching, discarding, etc... all do not. In the case of Reinforcement Walker, the ability attempts to look at a card that does not exist, so the ability simply does nothing.\n\n1.3.2 - Do as Much as You Can: While resolving a card ability, resolve as much of the ability as possible, and ignore any parts of the ability that cannot be resolved. (Note that you may choose to resolve abilities involving hidden information as though you have fewer options than you really do.)\n\n8.7.2 - If an ability would cause a player to shuffle, discard, search, reveal, or look at cards from an empty deck, they ignore that part of the ability.",
-      "tags": ["reinforcement walker", "draw", "on attack", "empty deck"]
+      "tags": ["reinforcement walker", "draw", "on attack", "empty deck"],
+      "difficulty": 1
    },
    {
       "id": 10,
@@ -137,7 +146,8 @@
       "answer": "b",
       "relevantCards": ["SOR/191", "SHD/013"],
       "relevantRule": "Han's leader ability results in a modified \"Play a card\" action and, like any all abilities that result in a modified action, must resolve in full before any resulting triggers can resolve, meaning the 2 damage is dealt to the Vanguard Ace while it's still a 1/1, defeating it.\n\n7.1.6.B - A modified \"Play a Card\" action might include: restrictions on the type of card that can be played, cost adjustments, playing cards from other zones, or other effects. Any abilities triggered during or as a result of a modified \"Play a Card\" action are resolved after the current ability is finished resolving.",
-      "tags": ["vanguard ace", "han solo", "when played", "experience", "trigger"]
+      "tags": ["vanguard ace", "han solo", "when played", "experience", "trigger"],
+      "difficulty": 1
    },
    {
       "id": 11,
@@ -151,7 +161,8 @@
       "answer": "d",
       "relevantCards": ["SHD/135", "SOR/203"],
       "relevantRule": "Once a player claims the initiative, they are forced to pass for the remainder of the phase. Since Kylo's TIE Silencer's ability is an Action Ability and not a Triggered Ability, Player A would need to use an action to play it from their discard.\n\n1.15.5.B - After taking the initiative, a player cannot use their turn to take any further actions for the rest of that round’s action phase. They are considered to have \"passed,\" and they automatically \"pass\" for all remaining turns they would take that phase. However, they still resolve any triggered abilities they control during that phase.",
-      "tags": ["kylo's tie silencer", "cunning", "random", "discard", "discard pile", "play a card", "initiative", "for this phase"]
+      "tags": ["kylo's tie silencer", "cunning", "random", "discard", "discard pile", "play a card", "initiative", "for this phase"],
+      "difficulty": 1
    },
    {
       "id": 12,
@@ -165,7 +176,8 @@
       "answer": "c",
       "relevantCards": ["SOR/182", "SOR/177", "SHD/229"],
       "relevantRule": "Even though Bossk's ability triggers as soon as Ma Klounkee is played, it waits to resolve until after the Event has finished resolving, even if Bossk is no longer in play.\n\n3.3.6 - If a triggered ability has the triggering condition \"When you play an event,\" the event ability must be resolved as completely as possible before resolving the triggered ability.\n\n7.6.3 - For a triggered ability to resolve, the card with the ability must be in play when the triggering condition occurs, unless the ability specifies that it can be triggered from an out-of-play zone. Additionally, the triggered ability must resolve once triggered, even if the card with the ability leaves play before the triggered ability resolves.\n\n7.6.8 - If an ability triggers during or as the result of a non-attack action, resolve that ability at the next available opportunity after that action is fully completed. If an ability triggers during an attack, resolve that ability at the appropriate timing point within that attack. Resolving a triggered ability never interrupts an action or ability that is currently resolving (other than the specified timing points during an attack), unless the currently resolving action or ability uses \"after,\" as described below. See 6.3. Attack With a Unit",
-      "tags": ["bossk", "bib fortuna", "ma klounkee", "shield token", "trigger", "shielded", "event", "bounce", "abilities"]
+      "tags": ["bossk", "bib fortuna", "ma klounkee", "shield token", "trigger", "shielded", "event", "bounce", "abilities"],
+      "difficulty": 2
    },
    {
       "id": 13,
@@ -179,7 +191,8 @@
       "answer": "b",
       "relevantCards": ["SHD/172", "SHD/178"],
       "relevantRule": "While Krayt Dragon's ability triggers as soon as Player B plays Daring Raid, the ability waits to resolve until the next available window, which is after the Event resolves. Unfortunately for Player A in this case, as soon as a base has 0 HP remaining, the game ends.\n\n5.6.2 - Once a player’s base has 0 remaining HP, they cannot take any actions, and cannot resolve any abilities or effects.\n\n7.6.8 - If an ability triggers during or as the result of a non-attack action, resolve that ability at the next available opportunity after that action is fully completed. If an ability triggers during an attack, resolve that ability at the appropriate timing point within that attack. Resolving a triggered ability never interrupts an action or ability that is currently resolving (other than the specified timing points during an attack), unless the currently resolving action or ability uses \"after,\" as described below. See 6.3. Attack With a Unit",
-      "tags": ["krayt dragon", "daring raid", "trigger", "event", "play a card", "timing", "abilities"]
+      "tags": ["krayt dragon", "daring raid", "trigger", "event", "play a card", "timing", "abilities"],
+      "difficulty": 1
    },
    {
       "id": 14,
@@ -193,7 +206,8 @@
       "answer": "a",
       "relevantCards": ["SHD/187", "TWI/213", "TWI/176"],
       "relevantRule": "While the text on Caught in the Crossfire states that the units are dealing damage to one another, since the cause of the damage is Caught in the Crossfire, it's still considered to be originating from an enemy card ability, meaning Lurking TIE still prevents the damage.",
-      "tags": ["lurking tie", "sanctioner's shuttle", "caught in the crossfire", "prevent", "event", "choose"]
+      "tags": ["lurking tie", "sanctioner's shuttle", "caught in the crossfire", "prevent", "event", "choose"],
+      "difficulty": 1
    },
    {
       "id": 15,
@@ -207,7 +221,8 @@
       "answer": "c",
       "relevantCards": ["SOR/193", "JTL/094"],
       "relevantRule": "When a unit returns to hand, all upgrades attached to it are defeated, meaning Player A has the choice to make Luke a ground unit. If they do, the timing for readying cards during the Regroup Phase has already passed (that's when Millennium Falcon's ability triggered), meaning he will remain exhausted leading into the next round.\n\n3.6.11 - An upgrade is defeated when either the unit it is attached to leaves play, or when an ability defeats it directly. When an upgrade is defeated, the attached unit loses all power, HP, and abilities given to it by the upgrade, and the upgrade is placed in its owner’s discard pile.\n\n5.5.1 - The regroup phase consists of the following 5 steps, in order: Start of the regroup phase, Draw cards, Resource cards, Ready cards, End of the regroup phase.",
-      "tags": ["millennium falcon", "luke skywalker", "trigger", "timing", "regroup phase", "bounce", "pilot", "ability"]
+      "tags": ["millennium falcon", "luke skywalker", "trigger", "timing", "regroup phase", "bounce", "pilot", "ability"],
+      "difficulty": 1
    },
    {
       "id": 16,
@@ -221,7 +236,8 @@
       "answer": "b",
       "relevantCards": ["SOR/154", "SOR/009-portrait"],
       "relevantRule": "Only units in play at the time a lasting effect is created, such as the one created by Rallying Cry, benefit from the effect.\n\n7.7.3.D - By default, a lasting effect only applies to a card that’s in play at the time of the lasting effect’s creation. For a lasting effect to affect a card in an out-of-play zone, the ability that created that effect must explicitly state so.",
-      "tags": ["rallying cry", "leia organa", "lasting effect", "raid", "event"]
+      "tags": ["rallying cry", "leia organa", "lasting effect", "raid", "event"],
+      "difficulty": 1
    },
    {
       "id": 17,
@@ -235,7 +251,8 @@
       "answer": "a",
       "relevantCards": ["JTL/009-portrait", "JTL/237", "SOR/184"],
       "relevantRule": "Italicized reminder text on cards has no impact on game rules and can be wholly ignored when reading a card's effect. In the case of Fett's Firespray, so long as the player controls any Boba Fett in any form, it can ready as a result of its When Played ability.\n\n2.13.2 - A card’s ability may be followed by italicized text in parentheses. Such text is called \"reminder text,\" and offers a simplified clarification of how that ability affects the game. Reminder text serves as a guide for ease of play, but does not override any rules in this Comprehensive Rules document. The presence or absence of reminder text does not mechanically affect the abilities on a card.",
-      "tags": ["fett's firespray", "boba fett", "readying", "when played", "pilot", "control"]
+      "tags": ["fett's firespray", "boba fett", "readying", "when played", "pilot", "control"],
+      "difficulty": 1
    },
    {
       "id": 18,
@@ -249,7 +266,8 @@
       "answer": "c",
       "relevantCards": ["SOR/141", "JTL/096", "JTL/135"],
       "relevantRule": "When Blue Leader moves to the ground arena as a result of its ability, it becomes a ground unit, even if it still says \"Space Unit\" at the top of the card. Also, a unit enters play before its own When Played ability resolves, so Special Forces TIE Fighter absolutely does count itself.\n\n4.3.5 - Units in the ground arena are considered ground units and not space units while in play, regardless of what their arena type is.\n\n7.6.13.A - Some triggered abilities are indicated with \"When Played\" in bold, followed by a colon and an effect. These abilities trigger when the card they’re on is played and resolve after the card’s cost is paid and it is put into play.",
-      "tags": ["special forces tie fighter", "blue leader", "green squadron a-wing", "when played"]
+      "tags": ["special forces tie fighter", "blue leader", "green squadron a-wing", "when played"],
+      "difficulty": 1
    },
    {
       "id": 19,
@@ -263,7 +281,8 @@
       "answer": "d",
       "relevantCards": ["JTL/147", "JTL/245", "JTL/013"],
       "relevantRule": "Due to Poe's wording, he is neither \"played\" nor \"deployed\" but rather \"attaches\" himself to a friendly Vehicle unit without a Pilot on it. Since R2-D2 specifically mentions those two methods of attaching, you cannot attach Poe to a Vehicle with R2-D2 (or any Pilot for that matter!) already attached.",
-      "tags": ["poe dameron", "r2-d2", "black one", "pilot", "ability", "restriction", "leader", "upgrade", "wording"]
+      "tags": ["poe dameron", "r2-d2", "black one", "pilot", "ability", "restriction", "leader", "upgrade", "wording"],
+      "difficulty": 2
    },
    {
       "id": 20,
@@ -277,7 +296,8 @@
       "answer": "a",
       "relevantCards": ["SOR/004-portrait", "SOR/130"],
       "relevantRule": "Since Chirrut's ability prevents him from being defeated during the Action Phase no matter how much damage he takes, no Overwhelm damage may be done to the base.\n\n7.5.7.F. - If an attacker with Overwhelm does not defeat the defender while attacking, no damage is dealt to the enemy base.",
-      "tags": ["chirrut", "first legion snowtrooper", "abilities", "overwhelm", "leader", "damaged unit", "on attack"]
+      "tags": ["chirrut", "first legion snowtrooper", "abilities", "overwhelm", "leader", "damaged unit", "on attack"],
+      "difficulty": 1
    },
    {
       "id": 21,
@@ -291,6 +311,7 @@
       "answer": "a",
       "relevantCards": ["TWI/011-portrait", "TWI/093", "TWI/095"],
       "relevantRule": "Coordinate doesn't care whether your units are ground, space, ready, exhausted, or your leader. So long as you control 3 units, Coordinate is active. Also, since When Played abilities resolve after the unit is in play, units with When Played abilities using Coordinate count themselves!\n\n7.5.15.A - \"Coordinate\" is a keyword followed by a dash and ability text whose effect is the same as the constant ability: \"While you control 3 or more units, this card gains the following ability.\"\n\n7.6.13.A - Some triggered abilities are indicated with \"When Played\" in bold, followed by a colon and an effect. These abilities trigger when the card they’re on is played and resolve after the card’s cost is paid and it is put into play.",
-      "tags": ["pelta supply frigate", "ahsoka tano", "advanced recon commando", "coordinate", "when played", "trigger"]
+      "tags": ["pelta supply frigate", "ahsoka tano", "advanced recon commando", "coordinate", "when played", "trigger"],
+      "difficulty": 0
    }
 ]
