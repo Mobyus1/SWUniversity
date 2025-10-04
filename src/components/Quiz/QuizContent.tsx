@@ -6,44 +6,51 @@ interface IProps {
   currentQuizSet: Quiz[];
   currentQuizId: number;
   quizMode: QuizModes;
-  allQuizzes: Quiz[];
   quizzesCompleted: number[];
   lastEndlessQuizzes: number[];
   quizResult: boolean;
   selectedAnswer: string;
   currentQuizKeys: string[];
+  standardQuizLength: number;
+  userResponses: {[key: number]: {selected: string; correct: string}};
   setCurrentQuizId: (id: number) => void;
   setQuizResult: (result: boolean) => void;
   setSelectedAnswer: (answer: string) => void;
   setQuizzesCompleted: (completed: number[]) => void;
   setLastEndlessQuizzes: (list: number[]) => void;
   setCurrentQuizKeys: (keys: string[]) => void;
-  setQuizMode: (mode: "" | "marathon" | "endless") => void;
+  setQuizMode: (mode: QuizModes) => void;
+  setStandardQuizLength: (length: number) => void;
+  setUserResponses: (responses: {[key: number]: {selected: string; correct: string}}) => void;
 }
 
 export function QuizContent({
   currentQuizSet,
   currentQuizId,
   quizMode,
-  allQuizzes,
   quizzesCompleted,
   lastEndlessQuizzes,
   quizResult,
   selectedAnswer,
   currentQuizKeys,
+  standardQuizLength,
+  userResponses,
   setCurrentQuizId,
   setQuizResult,
   setSelectedAnswer,
   setQuizzesCompleted,
   setCurrentQuizKeys,
   setLastEndlessQuizzes,
-  setQuizMode
+  setQuizMode,
+  setStandardQuizLength,
+  setUserResponses
 }: IProps) {
   const [showModal, setShowModal] = React.useState(false);
+  const currentQuiz = currentQuizSet.find(quiz => quiz.id === currentQuizId);
   const renderChoices = () => {
-    if(allQuizzes.length === 0) return null;
+    if(currentQuizSet.length === 0) return null;
     if(!currentQuizKeys || currentQuizKeys.length === 0) {
-      const choiceKeys = Object.keys(allQuizzes[currentQuizId].choices);
+      const choiceKeys = Object.keys(currentQuiz!.choices);
       for (let i = choiceKeys.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [choiceKeys[i], choiceKeys[j]] = [choiceKeys[j], choiceKeys[i]];
@@ -53,7 +60,7 @@ export function QuizContent({
 
     const highlighted = (index: number) => {
       if(!quizResult) return "";
-      return allQuizzes[currentQuizId].answer === currentQuizKeys[index]
+      return currentQuiz!.answer === currentQuizKeys[index]
         ? "bg-green-800/50 px-4 py-1 rounded"
         : selectedAnswer === currentQuizKeys[index]
           ? "bg-red-800/50 px-4 py-1 rounded"
@@ -71,7 +78,7 @@ export function QuizContent({
             onChange={() => setSelectedAnswer(currentQuizKeys[index])}
             disabled={quizResult}
           />
-          {allQuizzes[currentQuizId].choices[currentQuizKeys[index]]}
+          {currentQuiz!.choices[currentQuizKeys[index]]}
         </label>
       </div>
     );
@@ -81,7 +88,7 @@ export function QuizContent({
 
   return <div>
   {
-    quizzesCompleted.length === currentQuizSet.length && <div className="text-center m-[35%_10%] lg:m-[15%_10%]">
+    quizMode == "marathon" && quizzesCompleted.length === currentQuizSet.length && <div className="text-center m-[35%_10%] lg:m-[15%_10%]">
       <p className="text-2xl md:text-4xl font-bold mb-4 h-32">You've correctly answered every question!</p>
       <button className="btn btn-primary text-lg p-4" onClick={() => {
         setQuizzesCompleted([]);
@@ -93,10 +100,43 @@ export function QuizContent({
     </div>
   }
   {
-      quizzesCompleted.length < currentQuizSet.length && currentQuizSet[currentQuizId] && <div className={`grid ${globalBackgroundStyle} shadow-md md:grid-cols-[40%_60%] border p-8 rounded shadow-md gap-4`}>
+    quizMode == "standard" && quizzesCompleted.length === standardQuizLength && <div className="text-center m-[35%_10%] lg:m-[15%_10%]">
+      <p className="text-2xl md:text-4xl font-bold mb-4 h-32">Quiz Complete! You answered {Object.values(userResponses).filter(response => response.selected === response.correct).length} out of {standardQuizLength} questions correctly.</p>
+      <button className="btn btn-primary text-lg p-4" onClick={() => {
+        setQuizzesCompleted([]);
+        setUserResponses({});
+        setCurrentQuizId(0);
+        setQuizResult(false);
+        setSelectedAnswer("");
+        setQuizMode("");
+        setStandardQuizLength(0);
+      }}>Go Back to Quiz Menu</button>
+      <div className={"mt-8 text-left p-8 " + globalBackgroundStyle}>
+        <details>
+          <summary className="text-xl font-bold mb-4 cursor-pointer">Review Your Answers</summary>
+          <div className="mt-4">
+            {
+              Object.keys(userResponses).map((quizId, index) => {
+                const response = userResponses[parseInt(quizId)];
+                const quiz = currentQuizSet[index];
+
+                return <div key={quizId} className="mb-6 p-4 border rounded">
+                  <p className="font-bold">Q: {quiz.question}</p>
+                  <p>Your answer: <span className={response.selected === response.correct ? "text-green-500 font-bold" : "text-red-500 font-bold"}>{quiz.choices[response.selected]}</span></p>
+                  {response.selected !== response.correct && <p>Correct answer: <span className="text-green-500 font-bold">{quiz.choices[response.correct]}</span></p>}
+                </div>;
+              })
+            }
+          </div>
+        </details>
+      </div>
+    </div>
+  }
+  {
+      quizzesCompleted.length < currentQuizSet.length && currentQuiz && <div className={`grid ${globalBackgroundStyle} shadow-md md:grid-cols-[40%_60%] border p-8 rounded shadow-md gap-4`}>
       {/* Question and choices */}
       <div>
-        <p className="mb-2.5 text-lg md:text-xl">{currentQuizSet[currentQuizId].question}</p>
+        <p className="mb-2.5 text-lg md:text-xl">{currentQuiz!.question}</p>
         <form onSubmit={(e) => {
           e.preventDefault();
           const form = e.target as HTMLFormElement;
@@ -108,9 +148,9 @@ export function QuizContent({
         {
           quizResult && quizzesCompleted.length < currentQuizSet.length
             ? <button className="btn btn-secondary mt-4 text-lg p-4" onClick={() =>
-                  onNextQuestion(quizMode, selectedAnswer, currentQuizId, currentQuizSet[currentQuizId].answer.toString(),
-                    currentQuizSet, quizzesCompleted, lastEndlessQuizzes,
-                    setQuizzesCompleted, setCurrentQuizId, setQuizResult, setSelectedAnswer, setLastEndlessQuizzes)}>
+                  onNextQuestion(quizMode, selectedAnswer, currentQuizId, currentQuiz!.answer.toString(),
+                    currentQuizSet, quizzesCompleted, lastEndlessQuizzes, standardQuizLength, userResponses,
+                    setQuizzesCompleted, setCurrentQuizId, setQuizResult, setSelectedAnswer, setLastEndlessQuizzes, setUserResponses)}>
                 Next Question
               </button>
             : null
@@ -120,12 +160,12 @@ export function QuizContent({
       {/* Images */}
       <div className="flex-1 flex flex-[0_0_50%] flex-wrap items-center justify-center">
       {
-        allQuizzes[currentQuizId].relevantCards && allQuizzes[currentQuizId].relevantCards.length > 0 && <div>
+        currentQuiz!.relevantCards && currentQuiz!.relevantCards.length > 0 && <div>
           <div className="text-xl mb-2.5 mr-2">Relevant Cards</div>
           <div className="text-sm"><u onClick={() => setShowModal(true)}>(Click here to see enlarged images)</u></div>
           <div className="flex flex-wrap justify-center">
             {
-              allQuizzes[currentQuizId].relevantCards.map((cardName: string, index: number) => <div key={index} className="w-fit h-72 m-2.5">
+              currentQuiz!.relevantCards.map((cardName: string, index: number) => <div key={index} className="w-fit h-72 m-2.5">
                 <img src={`https://swudb.com/cdn-cgi/image/quality=40/images/cards/${cardName}.png`} alt={`card ${cardName}`} className="max-h-full object-contain" />
               </div>)
             }
@@ -135,20 +175,20 @@ export function QuizContent({
       </div>
       {/* Relevant rule */}
       {
-        quizResult && allQuizzes[currentQuizId].relevantRule != " " && <div className="md:col-span-2 mt-4">
+        quizResult && currentQuiz!.relevantRule != " " && <div className="md:col-span-2 mt-4">
           <p className="text-xl mb-2.5">Relevant Rules:</p>
-          <p className="whitespace-pre-wrap">{allQuizzes[currentQuizId].relevantRule}</p>
+          <p className="whitespace-pre-wrap">{currentQuiz!.relevantRule}</p>
         </div>
       }
       {/*Relevant Cards Modal*/}
       {
-        allQuizzes[currentQuizId].relevantCards &&
-        allQuizzes[currentQuizId].relevantCards.length > 0 &&
+        currentQuiz!.relevantCards &&
+        currentQuiz!.relevantCards.length > 0 &&
         showModal && <div className="overflow-y-scroll fixed inset-0 bg-black bg-opacity-70 flex flex-wrap" onClick={() => setShowModal(false)}>
           <p className="absolute top-2 md:top-4 right-4 md:right-8 text-gray-400 md:text-4xl" onClick={() => setShowModal(false)}>X</p>
           <div className="flex flex-wrap justify-center py-8 md:px-24">
           {
-            allQuizzes[currentQuizId].relevantCards.map((cardName: string, index: number) => <div key={index} className="w-fit h-100 md:h-120 m-2.5">
+            currentQuiz!.relevantCards.map((cardName: string, index: number) => <div key={index} className="w-fit h-100 md:h-120 m-2.5">
               <img src={`https://swudb.com/cdn-cgi/image/quality=40/images/cards/${cardName}.png`} alt={`card ${cardName}`} className="max-h-full object-contain" />
             </div>)
           }
@@ -171,52 +211,62 @@ function onNextQuestion(
   selectedAnswer: string,
   currentQuizId: number,
   currentQuizAnswer: string,
-  allQuizzes: Quiz[],
+  currentQuizSet: Quiz[],
   quizzesCompleted: number[],
   lastEndlessQuizzes: number[],
+  standardQuizLength: number,
+  userResponses: {[key: number]: {selected: string; correct: string}},
   setQuizzesCompleted: (completed: number[]) => void,
   setCurrentQuizId: (id: number) => void,
   setQuizResult: (result: boolean) => void,
   setSelectedAnswer: (answer: string) => void,
-  setLastEndlessQuizzes: (list: number[]) => void
+  setLastEndlessQuizzes: (list: number[]) => void,
+  setUserResponses: (responses: {[key: number]: {selected: string; correct: string}}) => void
 )
 {
   const endlessThreshold = 10; // Number of recent quizzes to track in endless mode
 
-  if(selectedAnswer === currentQuizAnswer) {
-    if(quizMode === "marathon") {
-      const updatedCompleted = [...quizzesCompleted, currentQuizId];
+  if(quizMode === "marathon") {
+    const updatedCompleted = [...quizzesCompleted];
+    if(selectedAnswer === currentQuizAnswer) {
+      updatedCompleted.push(currentQuizId);
       setQuizzesCompleted(updatedCompleted);
-      if(updatedCompleted.length !== allQuizzes.length) {
-        let nextQuiz = currentQuizId;
-        while(updatedCompleted.includes(nextQuiz)) {
-          nextQuiz = Math.floor(Math.random() * allQuizzes.length);
-        }
-        setCurrentQuizId(nextQuiz);
-        setQuizResult(false);
-        setSelectedAnswer("");
-      }
-    } else if(quizMode === "endless") {
-      const updatedLastEndless = [...lastEndlessQuizzes, currentQuizId];
-      if(updatedLastEndless.length > endlessThreshold) {
-        updatedLastEndless.shift();
-      }
-      setLastEndlessQuizzes(updatedLastEndless);
-      let nextQuiz = Math.floor(Math.random() * allQuizzes.length);
-      while(updatedLastEndless.includes(nextQuiz)) {
-          nextQuiz = Math.floor(Math.random() * allQuizzes.length);
+    }
+    if(updatedCompleted.length !== currentQuizSet.length) {
+      let nextQuiz = currentQuizSet[Math.floor(Math.random() * currentQuizSet.length)].id;
+      while(updatedCompleted.includes(nextQuiz)) {
+        nextQuiz = currentQuizSet[Math.floor(Math.random() * currentQuizSet.length)].id;
       }
       setCurrentQuizId(nextQuiz);
       setQuizResult(false);
       setSelectedAnswer("");
     }
-  } else {
-    let nextQuiz = Math.floor(Math.random() * allQuizzes.length);
-    while(quizzesCompleted.includes(nextQuiz)) {
-        nextQuiz = Math.floor(Math.random() * allQuizzes.length);
+  } else if(quizMode === "endless") {
+    const updatedLastEndless = [...lastEndlessQuizzes, currentQuizId];
+    if(updatedLastEndless.length > endlessThreshold) {
+      updatedLastEndless.shift();
+    }
+    setLastEndlessQuizzes(updatedLastEndless);
+    let nextQuiz = currentQuizSet[Math.floor(Math.random() * currentQuizSet.length)].id;
+    while(updatedLastEndless.includes(nextQuiz)) {
+        nextQuiz = currentQuizSet[Math.floor(Math.random() * currentQuizSet.length)].id;
     }
     setCurrentQuizId(nextQuiz);
     setQuizResult(false);
     setSelectedAnswer("");
+  } else if(quizMode === "standard") {
+    const updatedCompleted = [...quizzesCompleted];
+    updatedCompleted.push(currentQuizId);
+    setQuizzesCompleted(updatedCompleted);
+    const updatedResponses = {...userResponses};
+    updatedResponses[currentQuizId] = {selected: selectedAnswer, correct: currentQuizAnswer};
+    setUserResponses(updatedResponses);
+    if(updatedCompleted.length < standardQuizLength) {
+      console.log(currentQuizSet);
+      console.log(currentQuizId, updatedCompleted.length, currentQuizSet[updatedCompleted.length]);
+      setCurrentQuizId(currentQuizSet[updatedCompleted.length].id);
+      setQuizResult(false);
+      setSelectedAnswer("");
+    }
   }
 }
