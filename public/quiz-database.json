@@ -169,7 +169,7 @@
    },
    {
       "id": 13,
-      "question": "Player A has 2 HP remaining on their base and controls a Krayt Dragon. Player B has 1 HP remaining on their base and plays a Daring Raid, targeting Player B's base. What best describes what happens?",
+      "question": "Player A has 2 HP remaining on their base and controls a Krayt Dragon. Player B has 1 HP remaining on their base and plays a Daring Raid, targeting Player A's base. What best describes what happens?",
       "choices": {
         "a": "As the active player, Player B gets to choose which player resolves their triggers first and can choose to resolve Daring Raid before Player A resolves Krayt Dragon, meaning Player B wins the game.",
         "b": "Events must fully resolve before any abilities that trigger because of them can resolve, meaning Player B wins the game.",
